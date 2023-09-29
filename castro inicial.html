@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro Inicial</title>
+</head>
+<body>
+    <!--    
+            * Nome Empresa (Usuario). (essencial).
+            * E-mail (com dois campos um para inserir, outro para validar), validar se tem ".com" e "@". (essencial)
+            * Senha (com dois campos um para inserir, outro para validar), Deveter no minimo 8 caracteres, sendo no minimo 1 numero, 1 caracter especial, 1 letra maiuscula.  (essencial)
+            * CNPJ deve ter 14 carateres. (essencial)
+            * Telefone com dd. (desejavel).
+    -->
+
+    Nome da empresa: <input type="text" id="nome_empresa">
+    Insira o seu email: <input type="text" id="email_empresa">
+    Confirme o email: <input type="text" id="confirmacao_email">
+    Insira uma senha: <input type="text" id="senha_empresa">
+    Confirme a senha: <input type="text" id="confirmacao_senha">
+    CNPJ: <input type="text" id="cnpj_empresa">
+    <button onclick="cadastrar()"> Finalizar Cadastro </button>
+
+</body>
+</html>
+
+<script>
+
+    function cadastrar(){
+
+        var empresa = nome_empresa.value;
+        var email = email_empresa.value;
+        var confirmacaoE = confirmacao_email.value;
+        var senha = senha_empresa.value;
+        var confirmacaoS = confirmacao_senha.value;
+        var cnpj = cnpj_empresa.value;
+
+        // div_resultado.innerHTML += `Termina com ".com"? <b>${frase.endsWith(".com")}</b> <br>`;
+        if(email != email.endsWith(".com") && email != email.endsWith("@")){
+            alert("Email inválido.")
+        }else if(email != confirmacaoE){
+            alert("Emails não compatíveis")
+        }
+
+        // if(senha != senha.endsWith(".com")){
+        //     alert("Email inválido.")
+        // }else if(senha != confirmacaoS){
+        //     alert("Emails não compatíveis")
+        // }
+    
+    }
+</script>
