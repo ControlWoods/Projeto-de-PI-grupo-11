@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilo cadastro inicial.css">
     <title>Cadastro Inicial</title>
 </head>
 <body>
@@ -13,20 +14,48 @@
             * CNPJ deve ter 14 carateres. (essencial)
             * Telefone com dd. (desejavel).
     -->
+    <div class="header">
+        <div class="container">
+        <h1 class="logo">CW</h1>
+            <div class="navbar">
+                <ul>
+                    <li><a href="#"> Quem Somos </a></li>
+                    <li><a href="#"> Calculadora </a></li>
+                    <li><a href="#"> Cadastro </a></li>
+                    <li><a href="#"> Login </a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
 
-    Nome da empresa: <input type="text" id="nome_empresa">
-    <br><br>
-    Insira o seu email: <input type="text" id="email_empresa">
-    <br><br>
-    Confirme o email: <input type="text" id="confirmacao_email">
-    <br><br>
-    Insira uma senha: <input type="text" id="senha_empresa">
-    <br><br>
-    Confirme a senha: <input type="text" id="confirmacao_senha">
-    <br><br>
-    CNPJ: <input type="text" id="cnpj_empresa">
-    <br><br>
-    <button onclick="cadastrar()"> Finalizar Cadastro </button>
+    <div class="card-cadastro">
+        <div class="parte-da-esquerda">
+            <h1> Cadastrar </h1>
+            <ul>
+                <li>Nome da empresa: <input type="text" id="nome_empresa" class="ipt-empresa"></li>
+                <br><br>
+                <li>Usuário: <input type="text" id="usuario_empresa" class="ipt-empresa"> </li>
+                <br><br>
+                <li>Insira o seu email: <input type="text" id="email_empresa" class="ipt-empresa"></li>
+                <br><br>
+                <li>Confirme o email: <input type="text" id="confirmacao_email" class="ipt-empresa"></li>
+                <br><br>
+            </ul>
+        </div>
+
+        <div class="parte-da-direita">
+            <ul>
+                <li>Insira uma senha: <input type="text" id="senha_empresa" class="ipt-empresa"></li>
+                <br><br>
+                <li>Confirme a senha: <input type="text" id="confirmacao_senha" class="ipt-empresa"></li>
+                <br><br>
+                <li>CNPJ: <input type="text" id="cnpj_empresa" class="ipt-empresa"></li>
+                <br><br>
+                <li>Telefone (opcional): <input type="text" id="telefone_empresa" class="ipt-empresa"></li>
+            </ul>
+        </div>
+        <button onclick="cadastrar()" class="btn-cadastrar"> Finalizar Cadastro </button>
+    </div>
 
 </body>
 </html>
