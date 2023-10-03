@@ -15,11 +15,17 @@
     -->
 
     Nome da empresa: <input type="text" id="nome_empresa">
+    <br><br>
     Insira o seu email: <input type="text" id="email_empresa">
+    <br><br>
     Confirme o email: <input type="text" id="confirmacao_email">
+    <br><br>
     Insira uma senha: <input type="text" id="senha_empresa">
+    <br><br>
     Confirme a senha: <input type="text" id="confirmacao_senha">
+    <br><br>
     CNPJ: <input type="text" id="cnpj_empresa">
+    <br><br>
     <button onclick="cadastrar()"> Finalizar Cadastro </button>
 
 </body>
@@ -36,18 +42,23 @@
         var confirmacaoS = confirmacao_senha.value;
         var cnpj = cnpj_empresa.value;
 
-        // div_resultado.innerHTML += `Termina com ".com"? <b>${frase.endsWith(".com")}</b> <br>`;
-        if(email != email.endsWith(".com") && email != email.endsWith("@")){
+        var arroba = email.indexOf("@") 
+        
+        if(email != email.endsWith(".com") && arroba < 0){
             alert("Email inválido.")
         }else if(email != confirmacaoE){
             alert("Emails não compatíveis")
         }
+        
+        var numeroS = senha.indexOf(0,1, 2, 3, 4, 5, 6, 7, 8, 9)
+        
+        if(senha.length < 8 && numeroS < 0 ){
+            alert("A senha inválida")
+        }else if(senha != confirmacaoS){
+            alert("Senhas não compatíveis")
+        }
 
-        // if(senha != senha.endsWith(".com")){
-        //     alert("Email inválido.")
-        // }else if(senha != confirmacaoS){
-        //     alert("Emails não compatíveis")
-        // }
+        
     
     }
 </script>
