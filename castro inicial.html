@@ -87,7 +87,11 @@
             alert("Senhas não compatíveis")
         }
 
-        if(senha != senha.toUpperCase
+        if(senha != senha.indexOf(senha.toUpperCase)){
+            alert("A senha precisa de uma letra maiúscula");
+        }else if(senha != senha.indedxOf(senha.toLowerCase)){
+            alert("A senha precisa de uma letra minúscula");
+        }
 
         
     
