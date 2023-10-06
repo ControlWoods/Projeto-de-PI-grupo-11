@@ -3,16 +3,92 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro Endereo</title>
+    <link rel="stylesheet" href="estilo cadastro inicial.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <title>Cadastro Inicial</title>
 </head>
 <body>
-    <!--
-            * CEP char(8) (desejavel).
-            * Endereo varchar(50) (desejavel).
-            * estado Sigla char(2) (desejavel).
-            * cidade varchar(45) (desejavel).
-            * Numero float(11) terceiro caracter deve começar com 9 (desejavel).
-            * Complemento varchar(50) (desejavel).
-    -->
+    <div class="header">
+        <div class="container">
+        <h1 class="logo">CW</h1>
+            <div class="navbar">
+                <ul>
+                    <li><a href="#"> Quem Somos </a></li>
+                    <li><a href="#"> Calculadora </a></li>
+                    <li><a href="#"> Cadastro </a></li>
+                    <li><a href="#"> Login </a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="card-cadastro">
+        <div class="conteúdo">
+            <div class="titulo">
+                <h1> Cadastrar </h1>
+            </div>
+            <div class="div-inputs">
+                <div class="div1">
+
+                CEP: <br><input type="text" id="cep_empresa" class="ipt-empresa">
+                <br><br>
+                Endereço: <input type="text" id="endereco_empresa" class="ipt-empresa">
+                <br><br>
+                Estado: <input type="text" id="estado_empresa" class="ipt-empresa">
+                </div>
+
+                <div class="div2">
+                Cidade: <br><input type="text" id="cidade_empresa" class="ipt-empresa">
+                <br><br>   
+                Número: <br> <input type="text" id="numero_empresa" class="ipt-empresa">
+                <br><br>
+                Complemento: <input type="text" id="complemento_empresa" class="ipt-empresa">
+                <br><br>
+                </div>
+        </div>
+        </div>
+            <button onclick="cadastrar()" class="btn-cadastrar">Criar Conta</button>   
+    </div>
+
 </body>
 </html>
+
+<script>
+
+    function cadastrar(){
+
+        var empresa = nome_empresa.value;
+        var email = email_empresa.value;
+        var confirmacaoE = confirmacao_email.value;
+        var senha = senha_empresa.value;
+        var confirmacaoS = confirmacao_senha.value;
+        var cnpj = cnpj_empresa.value;
+
+        var arroba = email.indexOf("@") 
+        
+        if(email != email.endsWith(".com") && arroba < 0){
+            alert("Email inválido.")
+        }else if(email != confirmacaoE){
+            alert("Emails não compatíveis")
+        }
+        
+        var numeroS = senha.indexOf(0,1, 2, 3, 4, 5, 6, 7, 8, 9)
+        
+        if(senha.length < 8 && numeroS < 0 ){
+            alert("A senha inválida")
+        }else if(senha != confirmacaoS){
+            alert("Senhas não compatíveis")
+        }
+
+        if(senha != senha.indexOf(senha.toUpperCase)){
+            alert("A senha precisa de uma letra maiúscula");
+        }else if(senha != senha.indedxOf(senha.toLowerCase)){
+            alert("A senha precisa de uma letra minúscula");
+        }
+
+        
+    
+    }
+</script>
