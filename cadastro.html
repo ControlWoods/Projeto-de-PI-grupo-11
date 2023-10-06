@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="estilo cadastro inicial.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
     <title>Cadastro Inicial</title>
 </head>
 <body>
@@ -29,32 +32,33 @@
     </div>
 
     <div class="card-cadastro">
-        <div class="parte-da-esquerda">
-            <h1> Cadastrar </h1>
-            <ul>
-                <li>Nome da empresa: <input type="text" id="nome_empresa" class="ipt-empresa"></li>
-                <br><br>
-                <li>Usuário: <input type="text" id="usuario_empresa" class="ipt-empresa"> </li>
-                <br><br>
-                <li>Insira o seu email: <input type="text" id="email_empresa" class="ipt-empresa"></li>
-                <br><br>
-                <li>Confirme o email: <input type="text" id="confirmacao_email" class="ipt-empresa"></li>
-                <br><br>
-            </ul>
-        </div>
+        <div class="conteúdo">
+            <div class="titulo">
+                <h1> Cadastrar </h1>
+            </div>
+            <div class="div-inputs">
+                <div class="div1">
 
-        <div class="parte-da-direita">
-            <ul>
-                <li>Insira uma senha: <input type="text" id="senha_empresa" class="ipt-empresa"></li>
+                    Nome da empresa: <input type="text" id="nome_empresa" class="ipt-empresa">
                 <br><br>
-                <li>Confirme a senha: <input type="text" id="confirmacao_senha" class="ipt-empresa"></li>
+                Insira o seu email: <input type="text" id="email_empresa" class="ipt-empresa">
                 <br><br>
-                <li>CNPJ: <input type="text" id="cnpj_empresa" class="ipt-empresa"></li>
+                Confirme o email: <input type="text" id="confirmacao_email" class="ipt-empresa">
                 <br><br>
-                <li>Telefone (opcional): <input type="text" id="telefone_empresa" class="ipt-empresa"></li>
-            </ul>
+                Telefone (opcional): <input type="text" id="telefone_empresa" class="ipt-empresa">
+                </div>
+
+                <div class="div2">
+                CNPJ: <br><input type="text" id="cnpj_empresa" class="ipt-empresa">
+                <br><br>   
+                Insira uma senha: <br> <input type="text" id="senha_empresa" class="ipt-empresa">
+                <br><br>
+                Confirme a senha: <input type="text" id="confirmacao_senha" class="ipt-empresa">
+                <br><br>
+                </div>
         </div>
-        <button onclick="cadastrar()" class="btn-cadastrar"> Finalizar Cadastro </button>
+        </div>
+            <button onclick="cadastrar()" class="btn-cadastrar">Avançar</button>   
     </div>
 
 </body>
