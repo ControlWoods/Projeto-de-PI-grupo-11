@@ -101,7 +101,34 @@
         senha_empresa.value.indexOf('Y')>=0 ||
         senha_empresa.value.indexOf('X')>=0 ||
         senha_empresa.value.indexOf('Z')>=0;
- 
+        
+        var possui_minuscula=
+        senha.indexOf('a')>=0 ||
+        senha.indexOf('b')>=0 ||
+        senha.indexOf('c')>=0 ||
+        senha.indexOf('d')>=0 ||
+        senha.indexOf('e')>=0 ||
+        senha.indexOf('f')>=0 ||
+        senha.indexOf('g')>=0 ||
+        senha.indexOf('h')>=0 ||
+        senha.indexOf('i')>=0 ||
+        senha.indexOf('j')>=0 ||
+        senha.indexOf('k')>=0 ||
+        senha.indexOf('l')>=0 ||
+        senha.indexOf('m')>=0 ||
+        senha.indexOf('n')>=0 ||
+        senha.indexOf('o')>=0 ||
+        senha.indexOf('p')>=0 ||
+        senha.indexOf('q')>=0 ||
+        senha.indexOf('r')>=0 ||
+        senha.indexOf('s')>=0 ||
+        senha.indexOf('t')>=0 ||
+        senha.indexOf('u')>=0 ||
+        senha.indexOf('v')>=0 ||
+        senha.indexOf('w')>=0 ||
+        senha.indexOf('y')>=0 ||
+        senha.indexOf('x')>=0 ||
+        senha.indexOf('z')>=0 ;
         var arroba = email.indexOf("@") 
         
         if(email != email.endsWith(".com") && arroba < 0){
@@ -118,7 +145,7 @@
             alert("Senhas não compatíveis")
         }
         
-        if(possui_maiuscula<0){
+        if(possui_maiuscula<=0){
             alert("A senha precisa de uma letra maiúscula");
             var possui_minuscula=
             senha.indexOf('a')>=0 ||
@@ -147,7 +174,7 @@
             senha.indexOf('y')>=0 ||
             senha.indexOf('x')>=0 ||
             senha.indexOf('z')>=0 ;
-        }else if(possui_minuscula<0){
+        }else if(possui_minuscula<=0){
             alert("A senha precisa de uma letra minúscula");
         }
 
