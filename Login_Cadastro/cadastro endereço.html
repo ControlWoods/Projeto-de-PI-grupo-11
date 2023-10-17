@@ -31,21 +31,21 @@
             </div>
             <div class="div-inputs">
                 <div class="div1">
-
-                CEP: <br><input type="text" id="cep_empresa" class="ipt-empresa">
-                <br><br>
+                CEP: <input type="text" id="cep_empresa" class="ipt-empresa">
+                <div id="mensagem_email" style="color: red;padding:0 0 5px 10px;font-size: 10px;"></div>
                 Endereço: <input type="text" id="endereco_empresa" class="ipt-empresa">
-                <br><br>
-                Estado: <input type="text" id="estado_empresa" class="ipt-empresa">
+                <div id="mensagem_email" style="color: red;padding:0 0 5px 10px;font-size: 10px;"></div>
+                Estado :<input type="text" id="estado_empresa" class="ipt-empresa">
+                <div id="mensagem_email" style="color: red;padding:0 0 5px 10px;font-size: 10px;"></div>
                 </div>
 
                 <div class="div2">
-                Cidade: <br><input type="text" id="cidade_empresa" class="ipt-empresa">
-                <br><br>   
-                Número: <br> <input type="text" id="numero_empresa" class="ipt-empresa">
-                <br><br>
+                Cidade: <input type="text" id="cidade_empresa" class="ipt-empresa">
+                <div id="mensagem_email" style="color: red;padding:0 0 5px 10px;font-size: 10px;"></div>   
+                Número: <input type="text" id="numero_empresa" class="ipt-empresa">
+                <div id="mensagem_email" style="color: red;padding:0 0 5px 10px;font-size: 10px;"></div>
                 Complemento: <input type="text" id="complemento_empresa" class="ipt-empresa">
-                <br><br>
+                <div id="mensagem_email" style="color: red;padding:0 0 5px 10px;font-size: 10px;"></div>
                 </div>
         </div>
         </div>
@@ -68,7 +68,7 @@
 
         
         
-        if(cep.length <9 || cep.length>=10){
+        if(cep.length <8 || cep.length>8){
             alert("Cep inválido")
         }
         

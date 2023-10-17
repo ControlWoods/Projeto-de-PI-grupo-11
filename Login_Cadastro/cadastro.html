@@ -38,22 +38,28 @@
             </div>
             <div class="div-inputs">
                 <div class="div1">
-
-                    Nome da empresa: <input type="text" id="nome_empresa" class="ipt-empresa">
-                <br><br>
+                Nome da empresa: <input type="text" id="nome_empresa" class="ipt-empresa" >
+                <div id="mensagem_nome" style="color: red;padding:0 0 5px 10px;font-size: 10px;"></div>
+                
                 Insira o seu email: <input type="text" id="email_empresa" class="ipt-empresa">
-                <br><br>
+                <div id="mensagem_email" style="color: red;padding:0 0 5px 10px;font-size: 10px;"></div>
+                
                 Confirme o email: <input type="text" id="confirmacao_email" class="ipt-empresa">
-                <br><br>
+                <div id="mensagem_confirmacao1" style="color: red;padding:0 0 5px 10px;font-size: 10px;" ></div>
+                
                 Telefone (opcional): <input type="text" id="telefone_empresa" class="ipt-empresa">
+                <div id="mensagem_telefone" style="color: red;padding:0 0 5px 10px;font-size: 10px ;"></div>
                 </div>
 
                 <div class="div2">
                 CNPJ: <br><input type="text" id="cnpj_empresa" class="ipt-empresa">
-                <br><br>   
+                <div id="mensagem_cnpj" style="color: red;padding:0 0 5px 10px;font-size: 10px;"></div>
+                
                 Insira uma senha: <br> <input type="text" id="senha_empresa" class="ipt-empresa">
-                <br><br>
+                <div id="mensagem_senha" style="color: red;padding:0 0 5px 10px;font-size: 10px;"></div>
+                
                 Confirme a senha: <input type="text" id="confirmacao_senha" class="ipt-empresa">
+                <div id="mensagem_confirmacao2" style="color: red;padding:0 0 5px 10px;font-size: 10px;"></div>
                 <br><br>
                 </div>
         </div>
@@ -74,111 +80,57 @@
         var senha = senha_empresa.value;
         var confirmacaoS = confirmacao_senha.value;
         var cnpj = cnpj_empresa.value;
-        var possui_maiuscula=
-        senha_empresa.value.indexOf('A')>=0 ||
-        senha_empresa.value.indexOf('B')>=0 ||
-        senha_empresa.value.indexOf('C')>=0 ||
-        senha_empresa.value.indexOf('D')>=0 ||
-        senha_empresa.value.indexOf('E')>=0 ||
-        senha_empresa.value.indexOf('F')>=0 ||
-        senha_empresa.value.indexOf('G')>=0 ||
-        senha_empresa.value.indexOf('H')>=0 ||
-        senha_empresa.value.indexOf('I')>=0 ||
-        senha_empresa.value.indexOf('J')>=0 ||
-        senha_empresa.value.indexOf('K')>=0 ||
-        senha_empresa.value.indexOf('L')>=0 ||
-        senha_empresa.value.indexOf('M')>=0 ||
-        senha_empresa.value.indexOf('N')>=0 ||
-        senha_empresa.value.indexOf('O')>=0 ||
-        senha_empresa.value.indexOf('P')>=0 ||
-        senha_empresa.value.indexOf('Q')>=0 ||
-        senha_empresa.value.indexOf('R')>=0 ||
-        senha_empresa.value.indexOf('S')>=0 ||
-        senha_empresa.value.indexOf('T')>=0 ||
-        senha_empresa.value.indexOf('U')>=0 ||
-        senha_empresa.value.indexOf('V')>=0 ||
-        senha_empresa.value.indexOf('W')>=0 ||
-        senha_empresa.value.indexOf('Y')>=0 ||
-        senha_empresa.value.indexOf('X')>=0 ||
-        senha_empresa.value.indexOf('Z')>=0;
-        
-        var possui_minuscula=
-        senha.indexOf('a')>=0 ||
-        senha.indexOf('b')>=0 ||
-        senha.indexOf('c')>=0 ||
-        senha.indexOf('d')>=0 ||
-        senha.indexOf('e')>=0 ||
-        senha.indexOf('f')>=0 ||
-        senha.indexOf('g')>=0 ||
-        senha.indexOf('h')>=0 ||
-        senha.indexOf('i')>=0 ||
-        senha.indexOf('j')>=0 ||
-        senha.indexOf('k')>=0 ||
-        senha.indexOf('l')>=0 ||
-        senha.indexOf('m')>=0 ||
-        senha.indexOf('n')>=0 ||
-        senha.indexOf('o')>=0 ||
-        senha.indexOf('p')>=0 ||
-        senha.indexOf('q')>=0 ||
-        senha.indexOf('r')>=0 ||
-        senha.indexOf('s')>=0 ||
-        senha.indexOf('t')>=0 ||
-        senha.indexOf('u')>=0 ||
-        senha.indexOf('v')>=0 ||
-        senha.indexOf('w')>=0 ||
-        senha.indexOf('y')>=0 ||
-        senha.indexOf('x')>=0 ||
-        senha.indexOf('z')>=0 ;
-        var arroba = email.indexOf("@") 
-        
-        if(email != email.endsWith(".com") && arroba < 0){
-            alert("Email inválido.")
-        }else if(email != confirmacaoE){
-            alert("Emails não compatíveis")
+        var arroba = email.indexOf("@")
+        mensagem_senha.innerHTML='';
+        mensagem_confirmacao2.innerHTML='';
+        mensagem_nome.innerHTML='';
+        mensagem_email.innerHTML='';
+        mensagem_cnpj.innerHTML='';
+        mensagem_confirmacao1.innerHTML='';
+        if(cnpj==''){
+            mensagem_cnpj.innerHTML='*Este campo é obrigátorio'
+        }
+        else if(cnpj.length<14 || cnpj.length>14){
+            mensagem_cnpj.innerHTML='*Este campo é obrigátorio'
+        }
+        if(empresa==''){
+            mensagem_nome.innerHTML='*Este campo é obrigátorio'
+        } 
+        if(email==''){
+            mensagem_email.innerHTML='*Este campo é obrigátorio'
+        }else if(email != email.endsWith(".com") && arroba < 0){
+            mensagem_email.innerHTML+="Email inválido";
+        }
+        if(confirmacaoE==''){
+            mensagem_confirmacao1.innerHTML='*Este campo é obrigátorio'
+        }
+        else if(email != confirmacaoE){
+            mensagem_confirmacao1.innerHTML="Emails não compatíveis";
         }
         
         var numeroS = senha.indexOf(0,1, 2, 3, 4, 5, 6, 7, 8, 9)
-        
-        if(senha.length < 8 && numeroS < 0 ){
-            alert("A senha inválida")
-        }else if(senha != confirmacaoS){
-            alert("Senhas não compatíveis")
+        if(senha==''){
+            mensagem_senha.innerHTML+='*Este campo é obrigátorio'
         }
-        
-        if(possui_maiuscula<=0){
-            alert("A senha precisa de uma letra maiúscula");
-            var possui_minuscula=
-            senha.indexOf('a')>=0 ||
-            senha.indexOf('b')>=0 ||
-            senha.indexOf('c')>=0 ||
-            senha.indexOf('d')>=0 ||
-            senha.indexOf('e')>=0 ||
-            senha.indexOf('f')>=0 ||
-            senha.indexOf('g')>=0 ||
-            senha.indexOf('h')>=0 ||
-            senha.indexOf('i')>=0 ||
-            senha.indexOf('j')>=0 ||
-            senha.indexOf('k')>=0 ||
-            senha.indexOf('l')>=0 ||
-            senha.indexOf('m')>=0 ||
-            senha.indexOf('n')>=0 ||
-            senha.indexOf('o')>=0 ||
-            senha.indexOf('p')>=0 ||
-            senha.indexOf('q')>=0 ||
-            senha.indexOf('r')>=0 ||
-            senha.indexOf('s')>=0 ||
-            senha.indexOf('t')>=0 ||
-            senha.indexOf('u')>=0 ||
-            senha.indexOf('v')>=0 ||
-            senha.indexOf('w')>=0 ||
-            senha.indexOf('y')>=0 ||
-            senha.indexOf('x')>=0 ||
-            senha.indexOf('z')>=0 ;
-        }else if(possui_minuscula<=0){
-            alert("A senha precisa de uma letra minúscula");
-        }
+        else if(senha.length < 8){
+            mensagem_senha.innerHTML+="Sua senha precisa ter no minímo 8 caracteres";
+        }else if(numeroS <0){
+            mensagem_senha.innerHTML+='Sua senha precisa ter números'
 
-        
-    
+        }else if(senha.toLowerCase()==senha){
+            mensagem_senha.innerHTML+="A senha precisa de uma letra maiúscula";
+        } else if(senha.toUpperCase()==senha){
+            mensagem_senha.innerHTML+="A senha precisa de uma letra minúscula";
+        }else{
+            mensagem_senha.innerHTML='';
+        }
+        if(confirmacaoS==''){
+            mensagem_confirmacao2.innerHTML='*Este campo é obrigátorio'
+        }
+        else if(senha!=confirmacaoS){
+            mensagem_confirmacao2.innerHTML="As senhas não são compativeis";
+        }else{
+            mensagem_confirmacao2.innerHTML=''
+        }
     }
 </script>
