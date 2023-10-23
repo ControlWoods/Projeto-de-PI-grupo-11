@@ -7,11 +7,13 @@
 
 body {
     font-family: Poppins;
+    background-color: #E2D9C7;
 }
 
 .header {
     width: 100%;
     height: 100px;
+    position: fixed;
 }
 
 .header .container {
@@ -33,6 +35,10 @@ body {
     color: whitesmoke;
 }
 
+.logo {
+    color: whitesmoke;
+}
+
 .inicial {
     background:
     linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
@@ -49,6 +55,7 @@ body {
     align-items: flex-end;
     flex-direction: column;
     padding: 100px;
+    padding-top: 180px;
     font-size: 25px;
 }
 
@@ -80,5 +87,38 @@ body {
 
 .texto-contexto-2 p {
     padding-left: 50px;
+    width: 600px;
+}
+
+.tabuas-mofadas {
     width: 400px;
+}
+
+.texto-contexto-3 {
+    display: flex;
+    flex-direction: row-reverse;
+    padding: 100px
+}
+
+.texto-contexto-3 p {
+    width: 400px;
+    margin: 100px;
+    margin-right: 300px;
+}
+
+.sobre-nos-inicial {
+    background-image: url(assets/sobre-nos.png);
+    width: 100%;
+    height: 600px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: whitesmoke;
+    font-size: 25px;
+}
+
+.sobre-nos {
+    height: 1500px;
 }
