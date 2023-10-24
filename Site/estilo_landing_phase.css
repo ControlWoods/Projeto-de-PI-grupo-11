@@ -122,3 +122,19 @@ body {
 .sobre-nos {
     height: 1500px;
 }
+
+.texto-sobre-nos-1 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 100px
+}
+
+.texto-sobre-nos-1 p {
+    width: 500px
+}
+
+.texto-sobre-nos-1 b {
+    font-size: 25px;
+}
