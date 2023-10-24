@@ -8,13 +8,13 @@
 body {
     background:
     linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
-    url(assets/madeira.jfif);
-    font-family: Poppins;
+    url(../img/madeira.jfif);
 }
 
 .header {
     width: 100%;
     height: 100px;
+    background-color: #544545;
 }
 
 .header .container {
@@ -33,8 +33,9 @@ body {
 
 .header .container .navbar li a {
     text-decoration: none;
-    color: whitesmoke;
+    color: rgb(245, 245, 245);
 }
+
 h1 {
     color: whitesmoke;
     margin-bottom: 20px;
@@ -107,6 +108,10 @@ h1 {
     flex-direction: column;
     padding-left: 50px;
 }
+.mensagem{color: red;
+    padding:0 0 5px 10px;
+    font-size: 10px;}
 .ipt-empresa{
     padding-left: 10px;
 }
+

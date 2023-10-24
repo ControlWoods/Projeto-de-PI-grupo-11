@@ -9,6 +9,7 @@ senha varchar(20),
 cnpj char(14),
 telefone char(11)
 );
+
 create table endereco(
 idEndereco int primary key auto_increment,
 estado varchar(15),
@@ -21,6 +22,7 @@ fkEmpresa int,
 constraint fkE foreign key (fkEmpresa)
 references empresa(idEmpresa)
 );
+
 create table galpao(
 idGalpao int primary key auto_increment,
 nomeGalpao varchar(30),
@@ -37,7 +39,9 @@ references galpao(idGalpao)
 );
 insert into sensores values
 (1, 'Umidade', null);
+
 select * from sensores;
+
 create table registros
 (idRegistros int auto_increment,
 umidade float,
@@ -47,6 +51,7 @@ constraint fkS foreign key (fkSensor)
 references sensores(idSensores),
 primary key(idRegistros,fkSensor)
 );
+
 select * from registros;
 
 select * from endereco as e join empresa as emp on e.fkEmpresa= emp.idEmpresa 
