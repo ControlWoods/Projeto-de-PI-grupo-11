@@ -42,7 +42,7 @@ body {
 .inicial {
     background:
     linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
-    url(assets/armazem.webp);
+    url(../img/armazem.webp);
     width: 100%;
     height: 600px;
     background-size: cover;
@@ -107,7 +107,7 @@ body {
 }
 
 .sobre-nos-inicial {
-    background-image: url(assets/sobre-nos.png);
+    background-image: url(../img/sobre-nos.png);
     width: 100%;
     height: 600px;
     background-size: contain;
@@ -117,10 +117,12 @@ body {
     align-items: center;
     color: whitesmoke;
     font-size: 25px;
+    background-color: #E2D9C7;
 }
 
 .sobre-nos {
-    height: 1500px;
+    height: 2000px;
+    background-color: #E2D9C7;
 }
 
 .texto-sobre-nos-1 {
@@ -128,7 +130,7 @@ body {
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
-    margin-top: 100px
+    padding-top: 110px
 }
 
 .texto-sobre-nos-1 p {
@@ -137,4 +139,42 @@ body {
 
 .texto-sobre-nos-1 b {
     font-size: 25px;
+}
+
+.cards {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 100px
+}
+
+.titulo-cards {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 200px;
+    font-size: 40px;
+}
+
+.titulo-cards i {
+    border-bottom: solid 3px black;
+
+}
+.card-1 {
+    width: 30%;
+    height: 300px;
+    background-color: #BA9E76;
+}
+
+.card-2 {
+    width: 30%;
+    height: 300px;
+    background-color: #BA9E76;
+}
+
+.card-3 {
+    width: 30%;
+    height: 300px;
+    background-color: #BA9E76;
 }
