@@ -13,8 +13,7 @@ body {
 .header {
     width: 100%;
     height: 100px;
-    position: fixed;
-    background-color: #544545;
+    border-bottom: black solid 3px;
 }
 
 .header .container {
