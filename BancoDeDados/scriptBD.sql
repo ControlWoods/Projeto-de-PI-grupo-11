@@ -35,16 +35,19 @@ fkGalpao int,
 constraint fkG foreign key(fkGalpao)
 references galpao(idGalpao)
 );
-
+insert into sensores values
+(1, 'Umidade', null);
+select * from sensores;
 create table registros
 (idRegistros int auto_increment,
-umidade int,
+umidade float,
 horario datetime,
 fkSensor int,
 constraint fkS foreign key (fkSensor)
 references sensores(idSensores),
 primary key(idRegistros,fkSensor)
 );
+select * from registros;
 
 select * from endereco as e join empresa as emp on e.fkEmpresa= emp.idEmpresa 
 join galpao as g on emp.idEmpresa = g.fkEmpresa 

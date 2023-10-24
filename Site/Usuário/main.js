@@ -4,7 +4,7 @@ const mysql = require('mysql2');
 
 const SERIAL_BAUD_RATE = 9600;
 const SERVIDOR_PORTA = 3000;
-const HABILITAR_OPERACAO_INSERIR = false;
+const HABILITAR_OPERACAO_INSERIR = true;
 
 const serial = async (
     valoresDht11Umidade,
@@ -19,7 +19,7 @@ const serial = async (
             port: 3306,
             user: 'aluno',
             password: 'sptech',
-            database: 'metricas'
+            database: 'controlWoods'
         }
     ).promise();
 
@@ -53,8 +53,8 @@ const serial = async (
 
         if (HABILITAR_OPERACAO_INSERIR) {
             await poolBancoDados.execute(
-                `INSERT INTO sensores (dht11Umidade, dht11Temperatura) VALUES (${dht11Umidade})`,
-                [dht11Umidade, dht11Temperatura]
+                `INSERT INTO registros (umidade, fkSensor) VALUES (${dht11Umidade}, ${1})`,
+                [dht11Umidade]
             );
         }
 

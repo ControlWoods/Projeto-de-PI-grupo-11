@@ -32,7 +32,7 @@
     </div>
     <div>
         <h1>Umidade</h1>
-        <section style="width:100%">
+        <section>
             <canvas id="dht11Umidade"></canvas>
         </section>
     </div>
@@ -110,7 +110,7 @@
 
         setInterval(() => {
             obterDados(dht11Umidade, 'dht11/umidade');
-        }, 1000);
+        }, 30000);
     </script>
 </body>
 </html>
