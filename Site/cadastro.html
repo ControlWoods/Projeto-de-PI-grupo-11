@@ -39,27 +39,27 @@
             <div class="div-inputs">
                 <div class="div1">
                 Nome da empresa: <input type="text" id="nome_empresa" class="ipt-empresa" >
-                <div id="mensagem_nome" style="color: red;padding:0 0 5px 10px;font-size: 10px;"></div>
+                <div id="mensagem_nome" class="mensagem"></div>
                 
                 Insira o seu email: <input type="text" id="email_empresa" class="ipt-empresa">
-                <div id="mensagem_email" style="color: red;padding:0 0 5px 10px;font-size: 10px;"></div>
+                <div id="mensagem_email" class="mensagem"></div>
                 
                 Confirme o email: <input type="text" id="confirmacao_email" class="ipt-empresa">
-                <div id="mensagem_confirmacao1" style="color: red;padding:0 0 5px 10px;font-size: 10px;" ></div>
+                <div id="mensagem_confirmacao1" class="mensagem" ></div>
                 
                 Telefone (opcional): <input type="text" id="telefone_empresa" class="ipt-empresa">
-                <div id="mensagem_telefone" style="color: red;padding:0 0 5px 10px;font-size: 10px ;"></div>
+                <div id="mensagem_telefone" class="mensagem"></div>
                 </div>
 
                 <div class="div2">
                 CNPJ: <br><input type="text" id="cnpj_empresa" class="ipt-empresa">
-                <div id="mensagem_cnpj" style="color: red;padding:0 0 5px 10px;font-size: 10px;"></div>
+                <div id="mensagem_cnpj" class="mensagem"></div>
                 
                 Insira uma senha: <br> <input type="text" id="senha_empresa" class="ipt-empresa">
-                <div id="mensagem_senha" style="color: red;padding:0 0 5px 10px;font-size: 10px;"></div>
+                <div id="mensagem_senha" class="mensagem"></div>
                 
                 Confirme a senha: <input type="text" id="confirmacao_senha" class="ipt-empresa">
-                <div id="mensagem_confirmacao2" style="color: red;padding:0 0 5px 10px;font-size: 10px;"></div>
+                <div id="mensagem_confirmacao2" class="mensagem"></div>
                 <br><br>
                 </div>
         </div>
@@ -80,7 +80,9 @@
         var senha = senha_empresa.value;
         var confirmacaoS = confirmacao_senha.value;
         var cnpj = cnpj_empresa.value;
-        var arroba = email.indexOf("@")
+        var arroba = email.indexOf("@");
+        var emailCorreto=email.endsWith(".com") && arroba > 0;
+
         mensagem_senha.innerHTML='';
         mensagem_confirmacao2.innerHTML='';
         mensagem_nome.innerHTML='';
@@ -98,7 +100,7 @@
         } 
         if(email==''){
             mensagem_email.innerHTML='*Este campo é obrigátorio'
-        }else if(email != email.endsWith(".com") && arroba < 0){
+        }else if(emailCorreto==false){
             mensagem_email.innerHTML+="Email inválido";
         }
         if(confirmacaoE==''){

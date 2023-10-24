@@ -109,7 +109,9 @@ h1 {
     flex-direction: column;
     padding-left: 50px;
 }
-
+.mensagem{color: red;
+    padding:0 0 5px 10px;
+    font-size: 10px;}
 .ipt-empresa{
     padding-left: 10px;
 }
