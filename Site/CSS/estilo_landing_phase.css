@@ -13,7 +13,6 @@ body {
 .header {
     width: 100%;
     height: 100px;
-    position: fixed;
 }
 
 .header .container {
@@ -55,7 +54,6 @@ body {
     align-items: flex-end;
     flex-direction: column;
     padding: 100px;
-    padding-top: 180px;
     font-size: 25px;
 }
 
@@ -121,7 +119,7 @@ body {
 }
 
 .sobre-nos {
-    height: 2000px;
+    height: 3000px;
     background-color: #E2D9C7;
 }
 
