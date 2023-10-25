@@ -178,3 +178,21 @@ body {
     height: 300px;
     background-color: #BA9E76;
 }
+
+.equipe {
+    display: flex;
+    justify-content: row;
+    flex-wrap: wrap;
+}
+
+.equipe img {
+    width: 200px;
+}
+
+.equipe p {
+    padding: 50px;
+    background-color: whitesmoke;
+    border-radius: 50px;
+    justify-content: center;
+    align-items: center;
+}
