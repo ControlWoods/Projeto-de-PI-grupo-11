@@ -83,7 +83,17 @@
         var cnpj = cnpj_empresa.value;
         var arroba = email.indexOf("@");
         var emailCorreto=email.endsWith(".com") && arroba > 0;
-
+        var numeroS = senha.indexOf(0)||
+        senha.indexOf(1)||
+        senha.indexOf(2)||
+        senha.indexOf(3)||
+        senha.indexOf(4)||
+        senha.indexOf(5)||
+        senha.indexOf(6)||
+        senha.indexOf(7)||
+        senha.indexOf(8)||
+        senha.indexOf(9);
+        
         mensagem_senha.innerHTML='';
         mensagem_confirmacao2.innerHTML='';
         mensagem_nome.innerHTML='';
@@ -111,13 +121,12 @@
             mensagem_confirmacao1.innerHTML="Emails não compatíveis";
         }
         
-        var numeroS = senha.indexOf(0,1, 2, 3, 4, 5, 6, 7, 8, 9)
         if(senha==''){
             mensagem_senha.innerHTML+='*Este campo é obrigátorio'
         }
         else if(senha.length < 8){
             mensagem_senha.innerHTML+="Sua senha precisa ter no minímo 8 caracteres";
-        }else if(numeroS <0){
+        }else if(numeroS==false){
             mensagem_senha.innerHTML+='Sua senha precisa ter números'
 
         }else if(senha.toLowerCase()==senha){
