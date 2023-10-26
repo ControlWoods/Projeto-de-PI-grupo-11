@@ -50,7 +50,7 @@ body {
 .texto-inicial {
     color: whitesmoke;
     display: flex;
-    justify-content: center;
+    justify-content:space-between;
     align-items: flex-end;
     flex-direction: column;
     padding: 100px;
@@ -63,8 +63,8 @@ body {
 
 .contexto {
     background:
-    linear-gradient(to top, #E2D9C7 21.88%, #EFE8DA 50%, #F3EDE1 60.54%, #ECE7C4 75.52%, #C9C48B 85.23%, #C1C880 100%);
-    height: 1500px;
+    linear-gradient(to top, #E2D9C7 21.88%, #EFE8DA 50%, #F3EDE1 60.54%, #E2D9C7 75.52%, #C3B1A0 85.23%, #665E53 100%);
+    height: 581px;
 }
 
 .texto-contexto-1 {
@@ -105,7 +105,7 @@ body {
 }
 
 .sobre-nos-inicial {
-    background-image: url(../img/sobre-nos.png);
+    /* background-image: url(../img/sobre-nos.png); */
     width: 100%;
     height: 600px;
     background-size: contain;
@@ -113,9 +113,14 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    color: whitesmoke;
+    color: #111904;
     font-size: 25px;
     background-color: #E2D9C7;
+}
+
+.sobre-nos-inicial i{
+        border-bottom: solid 2px #111904;
+        width: 10px;
 }
 
 .sobre-nos {
@@ -179,12 +184,14 @@ body {
 
 .equipe {
     display: flex;
-    justify-content: row;
-    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
 }
 
 .equipe img {
     width: 200px;
+    height: 200px;
+    border-radius: 10px;
 }
 
 .equipe p {
