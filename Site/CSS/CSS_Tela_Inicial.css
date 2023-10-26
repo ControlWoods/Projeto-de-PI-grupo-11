@@ -79,8 +79,8 @@ body {
 .texto-contexto-2 {
     display: flex;
     justify-content: space-around;
-    align-items: flex-end;
-    margin: 100px;
+    align-items: start;
+
 }
 
 .texto-contexto-2 p {
@@ -107,7 +107,6 @@ body {
 .sobre-nos-inicial {
     /* background-image: url(../img/sobre-nos.png); */
     width: 100%;
-    height: 600px;
     background-size: contain;
     background-repeat: no-repeat;
     display: flex;
@@ -124,7 +123,7 @@ body {
 }
 
 .sobre-nos {
-    height: 3000px;
+    height: max-content;
     background-color: #E2D9C7;
 }
 
@@ -137,7 +136,12 @@ body {
 }
 
 .texto-sobre-nos-1 p {
-    width: 500px
+    width: 800px
+}
+
+.cardResumo {
+    display: flex;
+    flex-direction: column;
 }
 
 .texto-sobre-nos-1 b {
@@ -149,14 +153,14 @@ body {
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
-    margin-top: 100px
+    margin-bottom: 100px;
 }
 
 .titulo-cards {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 200px;
+    margin: 50px;
     font-size: 40px;
 }
 
@@ -181,23 +185,45 @@ body {
     height: 300px;
     background-color: #BA9E76;
 }
+.titulo-equipe{
+    margin: 20px;
 
-.equipe {
+}
+.titulo-equipe h1{
     display: flex;
     justify-content: center;
     align-items: center;
+    margin: 40px;
+}
+
+.equipe {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding-bottom: 100px;
 }
 
 .equipe img {
     width: 200px;
     height: 200px;
-    border-radius: 10px;
+    border-radius: 30px;
 }
 
 .equipe p {
-    padding: 50px;
+    padding: 10px;
     background-color: whitesmoke;
     border-radius: 50px;
     justify-content: center;
     align-items: center;
+}
+
+.Main {
+    
+}
+
+.tituloEuca {
+    display: flex;
+    justify-content: conter;
+    align-items: center;
+    flex-direction: column;
 }
