@@ -1,0 +1,13 @@
+.divCentral {
+    margin: 50px;
+    padding: 75px;
+    border-radius: 75px;
+    background-color: burlywood;
+}
+
+.containerSimuladorFinanceiro {
+    display: flex;
+    align-items: start;
+    flex-direction: column;
+
+}

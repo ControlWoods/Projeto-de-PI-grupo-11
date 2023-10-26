@@ -3,8 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulador Financeiro</title>
     <link rel="stylesheet" href="./CSS/estilo_basico.css">
-    <title>Login</title>
+    <link rel="stylesheet" href="./CSS/estilo Simulador Financeiro.css">
+    <script src="../Site/JS/script Simulador Financeiro.js"></script>
 </head>
 <body>
     <div class="header">
@@ -21,23 +23,40 @@
             </div>
         </div>
     </div>
-    email ou usuario: <input type="text" id="input_usuarioEmail">
-    <br><br>
-    senha: <input type="text" id="input_senha">
+    <div class="divCentral">
+        <div class="containerSimuladorFinanceiro">
+            <div>
+            <h1>Simulador Financeiro</h1>
+            </div>
+            <div>
+                Quantidade de paletes: <input type="text" id="input_qtdPaletes">
+            </div>
+            <div>
+                Quantidade de Tábuas por paletes: <input type="text" id="input_qtdTabuas">
+            </div>
+            <div>
+                Preço unitario líquido das Tábuas: <input type="text" id="input_preco">
+            </div>
+            <div>
+                Quantidade de perda anual em %, devida a umidade: <input type="text" id="input_perda"><br> Pode ser estimativa, ou deixar o campo em branco que sera aplicado uma média de perda comum. 
+            </div>
+            <div>
+                <button onclick="calcular ()">Calcular</button>
+            </div>
+            <div id="div_calculo"></div>
+        </div>
+    </div>
     <footer class="rodape">
-
         <div class="rodape-sociais">
             <h1>Mídias Sociais</h1>
             <p>Facebook</p>
             <p>Instagram</p>
             <p>Linkedin</p>
         </div>
-
         <div class="rodape-descricao">
             <h1>Control Woods</h1>
             <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima tempore deleniti possimus libero itaque earum obcaecati praesentium ea sunt ex eligendi ducimus impedit, placeat, nobis commodi dicta? A, sed ipsam.</p>
         </div>
     </footer>
-    
 </body>
 </html>
