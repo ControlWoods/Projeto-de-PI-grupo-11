@@ -3,34 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./CSS/CSS_Cadastro.css">
     <link rel="stylesheet" href="./CSS/CSS_Base.css">
+    <link rel="stylesheet" href="./CSS/CSS_Cadastro.css">
     <script src="./JS/JS_Cadastro.js"></script>
-    <title>Cadastro Inicial</title>
+    <title>Cadastro</title>
 </head>
 <body>
     <div class="header">
-        <div class="container">
+        <div class="container-header">
             <img class="logo" src="./img/Logo/logoWhitesmoke.png" alt="">
-            <div class="navbar">
+            <div>
                 <ul>
-                    <li><a href="./telaInicial.html"> Quem Somos </a></li>
-                    <li><a href="./Simulador financeiro.html"> Simulador Financeiro </a></li>
-                    <li><a href="./cadastro.html"> Cadastro </a></li>
-                    <li><a href="./Login.html"> Login </a></li>
-                    <li><a href="./Usuário/index.html"> Usuário </a></li>
+                    <li><a href="./Tela_Inicial.html">Quem Somos</a></li>
+                    <li><a href="./Simulador_Financeiro.html">Simulador Financeiro</a></li>
+                    <li><a href="./Login.html">Login</a></li>
                 </ul>
             </div>
         </div>
     </div>
-    <div class="containerCentro">
-        <div class="card-cadastro">
-            <div class="conteúdo">
-                <div class="titulo">
-                    <h1> Cadastrar </h1>
-                </div>
-                <div class="div-inputs">
-                    <div class="div1">
+    <div class="elements">
+        <div class="container-cadastro">
+            <div class="title">
+                <h1> Cadastrar </h1>
+            </div>
+            <div class="div-inputs">
+                <div class="container-div1">
                     Nome da empresa: <input type="text" id="nome_empresa" class="ipt-empresa" >
                     <div id="mensagem_nome" class="mensagem"></div>
                     
@@ -42,9 +39,8 @@
                     
                     Telefone (opcional): <input type="text" id="telefone_empresa" class="ipt-empresa">
                     <div id="mensagem_telefone" class="mensagem"></div>
-                    </div>
-
-                    <div class="div2">
+                </div>
+                <div class="container-div2">
                     CNPJ: <br><input type="text" id="cnpj_empresa" class="ipt-empresa">
                     <div id="mensagem_cnpj" class="mensagem"></div>
                     
@@ -53,21 +49,27 @@
                     
                     Confirme a senha: <input type="text" id="confirmacao_senha" class="ipt-empresa">
                     <div id="mensagem_confirmacao2" class="mensagem"></div>
-                    <br><br>
-                    </div>
                 </div>
             </div>
-                <button onclick="cadastrar()" class="btn-cadastrar">Avançar</button>
+            <div class="container-button">
+                <button onclick="cadastrar()" class="button-avancar">Avançar</button>
+            </div>
         </div>
     </div>
-    <footer class="rodape">
-        <div class="rodape-sociais">
+    <div class="footer">
+        <div>
             <h1>Mídias Sociais</h1>
             <p>Facebook</p>
             <p>Instagram</p>
             <p>Linkedin</p>
         </div>
-    </footer>
+        <div>
+            <img class="logo-footer" src="./img/Logo/logoWhitesmoke.png" alt="">
+        </div>
+        <div>
+            <img class="logo" src="./img/Mapa_do_Brasil_com_a_Bandeira_Nacional.png" alt="">
+        </div>
+    </div>
 </body>
 </html>
 

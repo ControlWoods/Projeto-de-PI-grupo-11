@@ -9,15 +9,13 @@
 </head>
 <body>
     <div class="header">
-        <div class="container">
+        <div class="container-header">
             <img class="logo" src="./img/Logo/logoWhitesmoke.png" alt="">
-            <div class="navbar">
+            <div>
                 <ul>
-                    <li><a href="./telaInicial.html"> Quem Somos </a></li>
-                    <li><a href="./Simulador financeiro.html"> Simulador Financeiro </a></li>
-                    <li><a href="./cadastro.html"> Cadastro </a></li>
-                    <li><a href="./Login.html"> Login </a></li>
-                    <li><a href="./Usuário/index.html"> Usuário </a></li>
+                    <li><a href="./Tela_Inicial.html">Quem Somos</a></li>
+                    <li><a href="./Simulador_Financeiro.html">Simulador Financeiro</a></li>
+                    <li><a href="./Login.html">Login</a></li>
                 </ul>
             </div>
         </div>
@@ -46,26 +44,28 @@
                 Complemento: <input type="text" id="complemento_empresa" class="ipt-empresa">
                 <div id="mensagem_complemento" class="mensagem"></div>
                 </div>
-        </div>
+            </div>
         </div>
             <button onclick="cadastrar()" class="btn-cadastrar">Criar Conta</button>   
     </div>
 </div>
-<footer class="rodape">
-    <div class="rodape-sociais">
+<div class="footer">
+    <div>
         <h1>Mídias Sociais</h1>
         <p>Facebook</p>
         <p>Instagram</p>
         <p>Linkedin</p>
     </div>
-</footer>
-</body>
-</html>
+    <div>
+        <img class="logo-footer" src="./img/Logo/logoWhitesmoke.png" alt="">
+    </div>
+    <div>
+        <img class="logo" src="./img/Mapa_do_Brasil_com_a_Bandeira_Nacional.png" alt="">
+    </div>
+</div>
 
 <script>
-
     function cadastrar(){
-
         var cep = cep_empresa.value;
         var endereco = endereco_empresa.value;
         var estado = estado_empresa.value;
@@ -81,10 +81,5 @@
         }else{
             mensagem_cep.innerHTML='CEP inválido'
         }
-    
    }
-
-        
-    
-    
 </script>

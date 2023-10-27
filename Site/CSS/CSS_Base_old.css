@@ -5,15 +5,18 @@
     padding: 0;
     font-family: Poppins;
 }
+/* */
+body {
+    background-color: #E2D9C7;
+}
 
-/* inicio do header */
 .header {
     width: 100%;
     height: 100px;
     background-color: #522415;
 }
 
-.container-header {
+.header .container {
     width: 80%;
     height: 100%;
     margin: 0 10%;
@@ -22,38 +25,23 @@
     align-items: center;
 }
 
+.header .container li {
+    display: inline;
+    padding: 0 15px;
+}
+
+.header .container .navbar li a {
+    text-decoration: none;
+    color: whitesmoke;
+}
+
 .logo {
     display: flex;
     align-items: center;
     width: 200px;
 }
 
-li {
-    display: inline;
-    padding: 0 15px;
-}
-
-a {
-    text-decoration: none;
-    color: whitesmoke;
-}
-/* fim do header */
-
-/* inicio do body */
-body {
-    background-color: #E2D9C7;
-}
-
-.elements {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-/* fim do body */
-
-/* inicicio do footer */
-.footer {
+.rodape {
     height: 100px;
     background-color: #522415;
     color: whitesmoke;
@@ -61,23 +49,29 @@ body {
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-between;
 }
 
-.redes-sociais {
+.rodape-sociais {
     display: flex;
     flex-direction: column;
     width: 50%;
 }
 
-p {
+.rodape-sociais p {
     padding: 10px;
     padding-left: 0px;
 }
 
-.logo-footer {
+.rodape-descricao {
     display: flex;
-    align-items: center;
-    width: 300px;
+    flex-direction: column;
+    width: 50%;
 }
-/* fim do footer */
+
+.rodape-descricao p {
+    width: 350px;
+}
+
+.rodape h1 {
+    padding-bottom: 10px;
+}
