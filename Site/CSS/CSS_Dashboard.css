@@ -1,0 +1,42 @@
+.containergraficos {
+    box-shadow: 0px 4px 52px 0px rgba(0, 0, 0, 0.774);
+}
+
+.container-grafico-dinamico-line {
+    margin: 50px;
+    margin-bottom: 0px;
+    padding: 75px;
+    border-radius: 75px 75px 0 0 ;
+    background-color: #9A8D85;
+    color: whitesmoke;
+}
+
+.container-grafico-semanal {
+    margin: 50px;
+    margin-top: 0px;
+    padding: 75px;
+    border-radius: 0px 0px 75px 75px;
+    background-color: #9A8D85;
+    color: whitesmoke;
+}
+
+.title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+
+.container-text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 50px;
+}
+
+.container-analytics {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
