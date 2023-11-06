@@ -49,8 +49,3 @@ constraint fkS foreign key (fkSensor)
 references sensores(idSensores),
 primary key(idRegistros,fkSensor)
 );
-
-
-
-
-
