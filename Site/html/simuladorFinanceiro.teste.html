@@ -8,27 +8,80 @@
     <title>Document</title>
 </head>
 
-<body>
+<body>''
     <div class="container-body">
 
         <div class="container-calc">
             
             <div class="container-cabeçalho">
-                <div class="tituloCalculadora">
-                    Simulador Financeiro
+
+                <div class="titulo-calc">
+                    <h1>Simulador Financeiro</h1>
                 </div>
-                <div class="mensagemContexto">
+
+                <div class="line"></div>
+
+                <div class="mensagem-contexto">
                     <p>Este simulador tem como proposito mostrar o lucro bruto perdido devido a problemas com umidade em
                         armazéns de tabuas de eucalipto</p>
                 </div>
             </div>
-                <ul>
+            <div class="container-inputs">
+                
+                <div class="box-inputs">
+
+                    <div class="input-1">
+                        <p>Quantidade de tabuas vendidas por mês:</p>
+                        <input type="text" id="input_tabuas" class="input">
+                    </div>
+
+                    <div class="input-2">
+                        <p>Custo unitário por tabua:</p>
+                        <input type="text" id="input_custo" class="input">
+                    </div>
+
+                    <div class="input-3">
+                        <p>Porcentagem de perda do lucro bruto anual:</p>
+                        <input type="text" id="input_porcentagemPerda" class="input">
+                    </div>
+
+
+
+
+
+
+
+
+                    <!-- <div>
+                        <p class="span-caixa-alta">Quantidade de tabuas vendidas por mês:</p>
+                        <p class="span">Será usada para fazer o calculo do lucro bruto anual</p>
+                    </div>
+                    <div>
+                        <p class="span-caixa-alta">Custo unitário por tabua:</p>
+                        <p class="span">Será usado para fazer o calculo do lucro mensal</p> 
+                    </div>
+                    <div>
+                        <p class="span-caixa-alta">Porcentagem de perda do lucro bruto anual:</p>
+                        <p class="span">De preferencia dados reais da enpresa, mas pode ser uma extimativa, caso não saibe ou não tenha uma estimativa pode deixar em branco que será aplica 18% que de acordo com pesquisas é a média de perda comum</p>
+                    </div>
+                </div>
+
+                <div class="box-inputs">
+                    <input type="text" id="input_tabuas" class="input">
+                    <input type="text" id="input_custo" class="input">
+                    <input type="text" id="input_porcentagemPerda" class="input">
+                </div>
+                 -->
+                <!-- <ul>
                     <li><span>Quantidade de tabuas vendidas por mês:</span><input type="text" id="input_tabuas"
                             class="input"></li>
                     <li><span> Custo unitário por tabua:</span><input type="text" id="input_custo" class="input"></li>
-                    <li><span>Porcentagem de perda do lucro bruto anual:</span><input type="text"
-                            id="input_porcentagemPerda" class="input"></li>
-                </ul>
+                    <li><span>Porcentagem de perda do lucro bruto anual:</span><input type="text" id="input_porcentagemPerda" class="input"></li>
+                </ul> -->
+
+            </div>
+
+
                 <button onclick="calcular()" class="botaoInputs">Calcular</button>
             
 
