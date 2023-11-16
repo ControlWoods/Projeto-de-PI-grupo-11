@@ -80,7 +80,8 @@ body{
 .banner{
     height: var(--tamanho-banner);
     background-size: cover;
-    background-image: url(assets/img/armazem.jpg); 
+    background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.377) 0%, rgba(0, 0, 0, 0.377) 100%), url(assets/img/armazem.jpg); 
+    /* background: linear-gradient(0deg, rgba(0, 0, 0, 0.20) 0%, rgba(0, 0, 0, 0.20) 100%), url(assets/img/armazem.jpg), lightgray 0px -100.152px / 100% 157.23% no-repeat; */
     align-items: center;
     justify-content: center;
     padding-top: 200px;
@@ -100,5 +101,6 @@ body{
 }
 
 .slogan p{
-    text-align: center;
+    text-align: left;
+    padding-left: 297px;
 }
