@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Tabuas:
+    <input type="text" id="input_tabuas">
+    <br>
+    Custo
+    <input type="text" id="input_custo">
+    <br>
+    Porcentagem:
+    <input type="text" id="input_porcentagemPerda">
+    <br>
+    <button onclick="calcular()" >Calcular</button>
+    <div id="mensagemCalculadora"></div>
+</body>
+</html>
+<script>
+    function calcular(){
+        var qtdTabuas=Number(input_tabuas.value);
+        var custo= Number(input_custo.value);
+        var porcentagem= Number(input_porcentagemPerda.value);
+        var vendasAnuaisTotais= (qtdTabuas * custo)*12;
+        var vendasAnuaisPerdas= vendasAnuaisTotais*(porcentagem/100);
+        var porcentagemControl= porcentagem-porcentagem/4;
+        var vendasAnuaisControl= vendasAnuaisTotais- vendasAnuaisTotais*(porcentagemControl/100)
+
+        mensagemCalculadora.innerHTML=`No cenário onde fossem vendidas todas as suas <span style="color: green;">${qtdTabuas}</span> tábuas por mês, sua empresa teia um lucro anual de R$ <span style="color: green;">${vendasAnuaisTotais}</span>
+        <br>
+        <br>
+        <br>
+        Sua perda anual de <span style="color: red;">${porcentagem}%</span> representa R$ <span style="color: red;">${vendasAnuaisPerdas}</span>, que infelizmente é sua realidade atual
+        <br>
+        <br>
+        <br>
+        Com auxílio do nosso monitoramento a perda diminuiria para <span style="color: green;">${porcentagemControl}%</span> e seu lucro seria de R$ <span style="color: green;">${vendasAnuaisControl}</span> `
+    }
+</script>
