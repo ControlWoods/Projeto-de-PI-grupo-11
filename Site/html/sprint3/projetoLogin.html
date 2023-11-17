@@ -3,11 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kaisei+Decol&family=Poppins&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="projetoLogin.css">
     <title>Document</title>
 </head>
 <body>
-    <h1>
-        Ola!!!!!!!!!!!!
-    </h1>
+
+    <a href="projeto.html">
+        <img class="logo" src="../../img/Logo/logoBlack.png">
+    </a>
+
+    <div class="card-login">
+        <div class="saudacao">
+            
+            <img class="circulo" src="./assets/img/Ellipse 5.svg">
+            <img class="logo-saudacao" src="./assets/img/image 42.png">
+            <h1 class="titulo-bemvindo">Bem - Vindo</h1>
+
+        </div>
+        
+        <div class="conteudo">
+            <p class="p-texto">E-mail</p>
+            <input class="ipt-login" id="input_email" type="text">
+            <div class="mensagem-erro-email" id="erro_email">Seu e-mail está incorreto!</div>
+            <p class="p-texto">Senha</p>
+            <input class="ipt-login" id="input_senha" type="text">
+            <div class="mensagem-erro-senha" id="erro_senha">Sua senha está incorreta!</div>
+            <button class="btn-login" onclick="login()"> Entrar </button>
+
+            <p class="link">Não tem cadastro? <a class="link-cadastro" href="#">Clique aqui</a></p>
+        </div>
+    </div>
+
 </body>
 </html>
+
+<script>
+
+    function login() {
+        var email = input_email.value
+        var senha = Number(input_senha.value)
+
+        if (email != "foda@gmail.com" || senha != 123) {
+            erro_email.style.display = "block"
+            erro_senha.style.display = "block"
+        } else {
+            erro_email.style.display = "none"
+            erro_senha.style.display = "none"
+            window.location = "usuario.html"
+        }
+
+    }
+</script>

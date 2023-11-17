@@ -1,0 +1,150 @@
+@import url('https://fonts.googleapis.com/css2?family=Kaisei+Decol&family=Poppins&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: #E2D9C7;
+}
+
+.logo {
+    width: 200px;
+    padding: 30px;
+}
+
+.card-login {
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    margin-top: 10px;
+}
+
+.saudacao {
+    background-color: #1E0C06;
+    height: 100%;
+    width: 30%;
+    border-radius: 60px 0px 0px 60px;
+}
+
+.conteudo {
+    background-color: #fff;
+    height: 100%;
+    width: 43%;
+    border-radius: 0px 60px 60px 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 10px
+}
+
+.p-texto {
+    margin-left: -350px;
+    padding-bottom: 2px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.ipt-login {
+    width: 450px;
+    height: 50px;
+    margin-bottom: 25px;
+
+    border: none;
+    border-radius: 50px;
+    border-top: 2px solid #000;
+    border-left: 2px solid #000;
+
+    background: #BA9E76;
+    box-shadow: 10px 10px 10px 0px rgba(0, 0, 0, 0.25);
+
+    padding: 15px;
+    color: white;
+    font-weight: bold;
+}
+
+.logo-saudacao {
+    width: 150px;
+    position: absolute;
+    top: 220px;
+    left: 320px;
+}
+
+.circulo {
+    margin-top: 80px;
+    margin-left: 220px;
+}
+
+.titulo-bemvindo {
+    color: #fff;
+    font-family: 'Kaisei Decol', serif;
+    font-size: 40px;
+    position: absolute;
+    top: 265px;
+    left: 280px;
+    font-weight: normal;
+}
+
+.mensagem-erro-senha {
+    
+    color: red;
+    margin-left: -220px;
+    margin-top: -10px;
+    font-weight: bold;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    display: none;
+    
+}
+
+.mensagem-erro-email {
+    
+    color: red;
+    margin-left: -220px;
+    margin-top: -10px;
+    margin-bottom: 10px;
+    font-weight: bold;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    display: none;
+    
+}
+
+.btn-login {
+    margin-top: 50px;
+    margin-bottom: 20px;
+
+    padding: 5px;
+    padding-left: 30px;
+    padding-right: 30px;
+
+    width: 120px;
+    height: 39px;
+
+    border: none;
+    border-radius: 50px;
+    border-top: 2px solid #000;
+    border-left: 2px solid #000;
+
+    background: #1E0C06;
+    box-shadow: 10px 10px 10px 0px rgba(0, 0, 0, 0.25);
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+}
+
+.link {
+    font-size: 15px;
+}
+
+.link-cadastro {
+    font-size: 15px;
+    color: black;
+    font-weight: bold;
+}
