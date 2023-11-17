@@ -171,14 +171,50 @@ body{
 
 }
 
-.txtCalculadora h1{
+/* .txtCalculadora h1{
     color: #1E0C06;
     font-style: normal;
     line-height: normal;
-}
+    margin-top: 20px;
+    margin-bottom: 20px;
+} */
 
 .img_calculadora{
     background-image: url("assets/img/crescimento.png") ;
     background-size: cover;
     
 }
+
+.buttonCalculadora {
+    list-style: none;
+    color: #F5F5F5;
+    background-color: #3E2020;
+    font-size: medium;
+    font-weight: bold;
+    border-radius: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 0px;
+    padding-left: 0px;
+    width: 150px;
+    
+}
+
+.h1_calculadora {
+    color: #1E0C06;
+    font-style: normal;
+    line-height: normal;
+    margin-top: 20px;
+    margin-bottom: -13px;
+    padding: 20px;
+}
+
+.h1_financeira {
+    color: #1E0C06;
+    font-style: normal;
+    line-height: normal;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 20px;
+}
+
