@@ -1,72 +1,11 @@
-<<<<<<< HEAD
-@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
-
-=======
 /* Importanto a fonte poppins */
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
 /* Definindo a fonte poppins como padadrão da pagina. Definindo também o margin e padding 0 como padraão  */
->>>>>>> 930eea27d1576e106655e48df1464b76a1b9b1fc
 * {
     margin: 0;
     padding: 0;
     font-family: Poppins;
-<<<<<<< HEAD
-    background-color: #E2D9C7;
-}
-
-.header {
-    width: 100px;
-    height: 100px;
-}
-
-.container-header {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-direction: row;
-}
-
-.logo {
-    display: flex;
-    align-items: center;
-    width: 200px;
-}
-
-li {
-    display: inline;
-    padding: 0 15px;
-}
-
-a {
-    text-decoration: none;
-    color: whitesmoke;
-}
-/* fim do header */
-
-/* inicio do body */
-body {
-    background-color: #E2D9C7;
-}
-
-.elements {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-/*
-
-.calc {
-    margin: 50px;
-    padding: 75px;
-    border-radius: 75px;
-    background-color: #9A8D85;
-    box-shadow: 0px 4px 52px 0px rgba(0, 0, 0, 0.774);
-    color: whitesmoke;
-=======
->>>>>>> 930eea27d1576e106655e48df1464b76a1b9b1fc
 }
 
 /* Fundo da pagina */
@@ -160,9 +99,9 @@ body {
 
 /* Alinhando inputs de acordo com o texto*/
 .box-inputs {
-    margin-top: 2px;
+   
     width: 40%;
-    height: 235px;
+    height: 215px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -243,108 +182,18 @@ body {
     width: 70%;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* .box-texto-inputs {
-    height: 300px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
+.container-mensagem {
+    width: 85%;
+    padding: 40px;
+    background-color:#1E0C06;
+    border-bottom-left-radius: 40px;
+    border-bottom-right-radius: 40px;
+    border: solid 1px black;
+    border-top: 0px;
+    margin-bottom: 90px;
 }
 
-.box-texto-inputs p {
-    text-align: center;
-    width: 500px;
+.container_white {
+    background-color: white;
+    height: 75px;
 }
-
-.span-caixa-alta {
-    font-size: 20px;
-}
-
-.span {
-    font-size: 10px;
-}
-
-
-.box-inputs input {
-    background-color: #BA9E76;
-    height: 30px;
-    width: 300px;
-    border-radius:30px ;
-}
-.container-inputs li{
-    display: flex;
-    flex-direction: column;
-    padding: 30px;
-    padding-left: 30px;
-}
-.conteudoInputs{
-    display: flex;
-    width: 90%;
-    align-items: center;
-    flex-direction: column;
-    padding-top: 40px;
-}
-
-
-.botaoInputs{
-    height: 30px;
-    width: 100px;
-    display: flex;
-    
-} */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    .container-mensagem {
-        margin-bottom: 90px;
-        width: 85%;
-        padding: 40px;
-        background-color:#1E0C06;
-        border-bottom-left-radius: 40px;
-        border-bottom-right-radius: 40px;
-        border: solid 1px black;
-        border-top: 0px;
-    }
