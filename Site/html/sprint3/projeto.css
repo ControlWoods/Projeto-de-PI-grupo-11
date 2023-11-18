@@ -166,7 +166,7 @@ body{
 /* telaInicial calculadora */
 
 .txtCalculadora{
-    padding-top: 100px;
+    padding-top: 65px;
 }
 
 .img_calculadora{
@@ -203,7 +203,6 @@ body{
 
 .buttonCalculadora {
     list-style: none;
-    color: #F5F5F5;
     background-color: #3E2020;
     font-size: medium;
     font-weight: bold;
@@ -213,6 +212,11 @@ body{
     padding-right: -42px;
     padding-left: 32px;
     width: 139px;      
+}
+
+.buttonCalculadora a{
+    color: #F5F5F5;
+    text-decoration-line: none;
 }
 
 .Calculadora{
