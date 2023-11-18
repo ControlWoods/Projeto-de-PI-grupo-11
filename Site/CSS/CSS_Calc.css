@@ -1,9 +1,17 @@
+<<<<<<< HEAD
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
+=======
+/* Importanto a fonte poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+/* Definindo a fonte poppins como padadrão da pagina. Definindo também o margin e padding 0 como padraão  */
+>>>>>>> 930eea27d1576e106655e48df1464b76a1b9b1fc
 * {
     margin: 0;
     padding: 0;
     font-family: Poppins;
+<<<<<<< HEAD
     background-color: #E2D9C7;
 }
 
@@ -57,40 +65,286 @@ body {
     background-color: #9A8D85;
     box-shadow: 0px 4px 52px 0px rgba(0, 0, 0, 0.774);
     color: whitesmoke;
+=======
+>>>>>>> 930eea27d1576e106655e48df1464b76a1b9b1fc
 }
 
-.container-simulador-financeiro {
+/* Fundo da pagina */
+body {
+    background-color:  #E2D9C7;
+}
+
+/* div body, no caso a div que vai ficar o conteudo da pagina (calculadora) */
+.div-body {
     display: flex;
-    align-items: start;
+    align-items: center;
+    justify-content: center;
     flex-direction: column;
 }
 
-.title {
-    margin-bottom: 40px;
+/* div da parte de cima da calculadora aonde tem as inputs e contexto */
+.div-calc {
+    margin-top: 90px;
+    padding: 40px;
+    border: none;
+    border-top: solid 1px black;
+    border-left: solid 1px black;
+    border-right: solid 1px black;
+    border-top-left-radius: 40px;
+    border-top-right-radius: 40px;
+    background-color: #FFFFFF;
+    width: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
-.container-simulador-financeiro input {
+/* Alinhando os itens do cabeçalho */
+.container-cabeçalho {
+    display: flex;
+    flex-direction: column;
+} 
+/* titulo da calc - cabeçalho */
+.titulo-calc h1 {
+    margin-left: 10px;
+    font-size: 30px;
+}
+
+/* Line que divide o titulo da calc do contexto - cabeçalho */
+.line {
+    margin: 5px;
+    margin-bottom: 20px;
+    border: 2px solid #1E0C06;
     border-radius: 75px;
-    background: #9C8787;
-    border: 3px inset rgba(0, 0, 0, 0.267);
-    height: 25px;
-    color: whitesmoke;
-    width: 250px;
-    box-shadow: 0px 4px 52px 0px rgba(245, 245, 245, 0.17);
+    width: 60%;
 }
 
-.button-calc {
+/* Texto do contexto da calc - cabeçalho */
+.mensagem-contexto p{
+    margin-left: 10px;
+    width: 60%;
+    font-size: 20px;
+}
+
+/* tamanho do container que vai ficar as inputs e margin entre o cabeçalho e as inputs. */
+.container-inputs {
+    width: 100%;
+    padding: 40px;
     margin-top: 50px;
-    width: 140px;
-    height: 40px;
-    border-radius: 40px;
-    background-color: rgba(48, 30, 25, 0.85);
-    border: 3px inset rgba(0, 0, 0, 0.267);
-    color: whitesmoke;
-    font-size: 17px;
-    font-weight: bold;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
-.button-calc:hover {
-    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) inset;
+/* Box com os textos das inputs e seus respectivos contextos */
+.box-texto {
+    width: 60%;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
 }
+
+/* Tamanho do texto principal */
+.texto-input {
+    font-size: 20px;
+}
+
+/* tamanho do contexto */
+.p-2 {
+    font-size: 14px;
+}
+
+/* Alinhando inputs de acordo com o texto*/
+.box-inputs {
+    margin-top: 2px;
+    width: 40%;
+    height: 235px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: px;
+    justify-content: space-between;
+}
+
+/* definindo aparencia das inputs e animação */
+.box-inputs input {
+    color: whitesmoke;
+    text-align: center;
+    font-size: 17px;
+    background-color: #BA9E76;    
+    height: 30px;
+    width: 300px;
+    border: none;
+    border-top: 2px solid black;
+    border-left: 2px solid black;
+    border-radius: 30px;
+    transition: 1.5s;
+}
+
+/* sombra da animação */
+.box-inputs input:hover {
+    box-shadow: 10px 10px 10px 0px rgba(0, 0, 0, 0.25);
+}
+
+/* Container do button */
+.container-button {
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* custom do button */
+.container-button button {
+    padding: 5px;
+    width: 150px;
+    background-color: #1E0C06;
+    color: whitesmoke;
+    text-align: center;
+    font-size: 20px;
+    border: none;
+    border-top: 2px solid black;
+    border-left: 2px solid black;
+    border-radius: 30px;
+    transition: 1.5s;
+}
+
+/* animação do button */
+.container-button button:hover {
+    box-shadow: 10px 10px 10px 0px rgba(0, 0, 0, 0.25);
+}
+
+.div-calc-resp {
+    height: auto;
+    width: 70%;
+    padding: 40px;
+    border: none;
+    border-bottom: solid 1px black;;
+    border-left: solid 1px black;;
+    border-right: solid 1px black;;
+    border-bottom-left-radius: 40px;
+    border-bottom-right-radius: 40px; 
+    background-color: #1E0C06;
+    margin-bottom: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    font-size: 20px;
+    color: whitesmoke;
+    text-align: center;
+}
+
+.div-calc-resp p{
+    width: 70%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* .box-texto-inputs {
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.box-texto-inputs p {
+    text-align: center;
+    width: 500px;
+}
+
+.span-caixa-alta {
+    font-size: 20px;
+}
+
+.span {
+    font-size: 10px;
+}
+
+
+.box-inputs input {
+    background-color: #BA9E76;
+    height: 30px;
+    width: 300px;
+    border-radius:30px ;
+}
+.container-inputs li{
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+    padding-left: 30px;
+}
+.conteudoInputs{
+    display: flex;
+    width: 90%;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 40px;
+}
+
+
+.botaoInputs{
+    height: 30px;
+    width: 100px;
+    display: flex;
+    
+} */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    .container-mensagem {
+        margin-bottom: 90px;
+        width: 85%;
+        padding: 40px;
+        background-color:#1E0C06;
+        border-bottom-left-radius: 40px;
+        border-bottom-right-radius: 40px;
+        border: solid 1px black;
+        border-top: 0px;
+    }

@@ -1,31 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
-<<<<<<< HEAD
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
-</body>
-</html>
-=======
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../CSS/CSS_Calc.css">
-    <script src="../JS/JS_Calc.js"></script>
+    <link rel="stylesheet" href="../CSS/css_simuladorFinanceiro.css">
     <title>Document</title>
 </head>
 
-<body>
+<body>''
+    <div class="container-body">
 
-    <div class="div-body">
-
-        <div class="div-calc">
-
+        <div class="container-calc">
+            
             <div class="container-cabeçalho">
 
                 <div class="titulo-calc">
@@ -39,64 +26,33 @@
                         armazéns de tabuas de eucalipto</p>
                 </div>
             </div>
-
             <div class="container-inputs">
-
-                <div class="box-texto">
-
-                    <div class="texto-input">
-                        <p>Quantidade de tabuas vendidas por mês:</p>
-                        <p class="p-2">Será usada para fazer o calculo do lucro bruto anual</p>
-                    </div>
-                    <div class="texto-input">
-                        <p>Valor por tabua:</p>
-                        <p class="p-2">Será usado para fazer o calculo do lucro mensal</p>
-                    </div>
-                    <div class="texto-input">
-                        <p>Porcentagem de perda do lucro bruto anual:</p>
-                        <p class="p-2">De preferencia dados reais da enpresa, mas pode ser uma extimativa, caso não saibe ou não tenha uma estimativa pode deixar em branco que será aplica 18% que de acordo com pesquisas é a média de perda comum</p>
-                    </div>
-            
-                </div>
-
+                
                 <div class="box-inputs">
 
-                    <div>
+                    <div class="input-1">
+                        <p>Quantidade de tabuas vendidas por mês:</p>
                         <input type="text" id="input_tabuas" class="input">
                     </div>
-                    <div>                       
+
+                    <div class="input-2">
+                        <p>Custo unitário por tabua:</p>
                         <input type="text" id="input_custo" class="input">
                     </div>
-                    <div>                      
+
+                    <div class="input-3">
+                        <p>Porcentagem de perda do lucro bruto anual:</p>
                         <input type="text" id="input_porcentagemPerda" class="input">
                     </div>
 
-
-                </div>
-
-            </div>
-
-            <div class="container-button">
-                <button onclick="calcular()">Calcular</button>
-            </div>
-        
-        </div>
-        <div id="mensagemCalculadora" class="div-calc-resp">
-            <img src="../img/Logo/logoWhitesmoke.png" alt="">
-        </div>
-
-    </div>        
-</body>
-
-</html>
+ 
 
 
 
 
 
 
-
-<!-- <div>
+                    <!-- <div>
                         <p class="span-caixa-alta">Quantidade de tabuas vendidas por mês:</p>
                         <p class="span">Será usada para fazer o calculo do lucro bruto anual</p>
                     </div>
@@ -116,22 +72,26 @@
                     <input type="text" id="input_porcentagemPerda" class="input">
                 </div>
                  -->
-            <!-- <ul>
+                <!-- <ul>
                     <li><span>Quantidade de tabuas vendidas por mês:</span><input type="text" id="input_tabuas"
                             class="input"></li>
                     <li><span> Custo unitário por tabua:</span><input type="text" id="input_custo" class="input"></li>
                     <li><span>Porcentagem de perda do lucro bruto anual:</span><input type="text" id="input_porcentagemPerda" class="input"></li>
                 </ul> -->
 
+            </div>
 
 
+                <button onclick="calcular()" class="botaoInputs">Calcular</button>
+            
 
-            <!-- <button onclick="calcular()" class="botaoInputs">Calcular</button> -->
+                
+            </div>
+            <div class="container-mensagem" id="mensagemCalculadora">
+                
+            </div>
+        </div>
+            
+</body>
 
-
-
-
-            <!-- <div class="container-mensagem">
-            <input class="dd" type="text">
-            </div> -->
->>>>>>> 930eea27d1576e106655e48df1464b76a1b9b1fc
+</html>
