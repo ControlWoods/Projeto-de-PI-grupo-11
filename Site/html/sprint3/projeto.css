@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=MonteCarlo&display=swap');
+@import url('https://fonts.googleapis.com/css2? family= Poppins:wght@100;200;300;400;500;600;700 & family= Rubik+Mono+One & display= trocar');
 
 body{
     margin: 0;
@@ -158,31 +159,46 @@ body{
     padding-top: 185px;
     /* width: 27%;
     border-radius: 20px; */
-    width: 408px;
+    width: 423px;
     height: 287px;
 }
 
-.linha {
-    margin: 5px;
-    margin-bottom: 20px;
-    border:2px solid #1E0C06;
-    border-radius: 75px;
-    width: 200px;
+/* telaInicial calculadora */
 
+.txtCalculadora{
+    padding-top: 100px;
 }
-
-/* .txtCalculadora h1{
-    color: #1E0C06;
-    font-style: normal;
-    line-height: normal;
-    margin-top: 20px;
-    margin-bottom: 20px;
-} */
 
 .img_calculadora{
     background-image: url("assets/img/crescimento.png") ;
     background-size: cover;
-    
+    width: 100%;
+}
+
+.h1_calculadora {
+    color: #1E0C06;
+    font-family: 'Rubik Mono One', monospace;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding-left: 38px;
+    padding-top: 72px;
+    font-size: 55px;
+    font-weight: bold;
+}
+
+.img_calculadora p{
+    padding-left: 34px;
+    margin-top: -6px;
+    font-size: 24px;
+}
+
+.linha {
+    margin-left: 35px;
+    margin-bottom: 20px;
+    border: 2px solid #1E0C06;
+    border-radius: 75px;
+    width: 200px;
+    padding-left: 226px;
 }
 
 .buttonCalculadora {
@@ -194,27 +210,13 @@ body{
     border-radius: 20px;
     padding-top: 10px;
     padding-bottom: 10px;
-    padding-right: 0px;
-    padding-left: 0px;
-    width: 150px;
-    
+    padding-right: -42px;
+    padding-left: 32px;
+    width: 139px;      
 }
 
-.h1_calculadora {
-    color: #1E0C06;
-    font-style: normal;
-    line-height: normal;
-    margin-top: 20px;
-    margin-bottom: -13px;
-    padding: 20px;
+.Calculadora{
+    padding-left: 36px;
+    padding-top: 29px;
+    padding-bottom: 88px;
 }
-
-.h1_financeira {
-    color: #1E0C06;
-    font-style: normal;
-    line-height: normal;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    padding: 20px;
-}
-
