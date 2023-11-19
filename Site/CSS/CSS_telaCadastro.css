@@ -1,0 +1,71 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+.logoCadastro{
+    padding: 20px;
+    width: 200px;
+}
+.main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color:#E2D9C7;
+    /* height: 100vh; */
+
+}
+.formulario{
+    width: 70%;
+    padding: 40px;
+    /* height: auto; */
+    background-color: #FFFFFF;
+    border-radius: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.containerinputs{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    /* height: 400px; */
+    background-color: #FFFFFF;
+    border-radius: 30px;
+    margin: 40px;
+}
+.span-texto{
+padding-left: 20px;
+font-weight: bold;
+}
+.box-inputs{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    /* height: 215px; */
+}
+.box-inputs2{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start;
+    margin-bottom: 94px;
+    /* height: 200px; */
+}
+.botao{
+        margin-top: 50px;
+        width: 140px;
+        height: 40px;
+        border-radius: 40px;
+        background-color: rgba(48, 30, 25, 0.85);
+        border: 3px inset rgba(0, 0, 0, 0.267);
+        color: whitesmoke;
+        font-size: 17px;
+        font-weight: bold;
+}
+.botao:hover {
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) inset;
+    cursor: pointer;
+}
