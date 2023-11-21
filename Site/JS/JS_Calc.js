@@ -4,6 +4,11 @@ function calcular() {
     var qtdTabuas = Number(input_tabuas.value);
     var custoTabuas = Number(input_custo.value);
     var perdaPorcentagem = ((Number(input_porcentagemPerda.value) * 1) / qtdTabuas);
+    
+    // condição acaso campo 3 esteja nulo (será aplicado 18%)
+    if (perdaPorcentagem == 0) {
+        perdaPorcentagem = 18 / 100;
+    }
 
     // valor bruto em reais (sem a perda d tabuas)
     var vendasTotais = (qtdTabuas * custoTabuas);
@@ -16,10 +21,6 @@ function calcular() {
     // adicionando nossa porcentagem sob do valor liquido 
     var vendasControl = (perdasTotais * porcentagemControl) + perdasTotais;
 
-    // condição acaso campo 3 esteja nulo (será aplicado 18%)
-    if (perdaPorcentagem == 0) {
-        perdaPorcentagem = 18 / 100;
-    }
 
     // limpando as div de erro
     mensagem_erro1.innerHTML = "";
