@@ -42,11 +42,11 @@ function calcular() {
     // mensagem 
     if (valido) {
 
-        mensagemCalculadora.innerHTML = `<p>Atualmente sua empresa tem o lucro anual de R$ <span style="color: #68e968;">${perdasTotais}</span>.<br><br> 
+        mensagemCalculadora.innerHTML = `<p>Atualmente sua empresa tem o lucro anual de R$ <span style="color: #68e968;">${perdasTotais.toLocaleString()}</span>.<br><br> 
 
-        Sua perda anual de <span style="color: red;">${perdaPorcentagem*100}%</span> representa R$ <span style="color: red;">${valorPerdas}</span>, que infelizmente é sua realidade atual.<br><br> 
+        Sua perda anual de <span style="color: red;">${perdaPorcentagem*100}%</span> representa R$ <span style="color: red;">${valorPerdas.toLocaleString()}</span>, que infelizmente é sua realidade atual.<br><br> 
         
-        Com auxílio do nosso monitoramento a perda diminuiria para <span style="color: #68e968;">${porcentagemControl*100}%</span> e seu lucro aumentaria para R$ <span style="color: #68e968;">${vendasControl}</span>.</p>`;
+        Com auxílio do nosso monitoramento a perda diminuiria para <span style="color: #68e968;">${porcentagemControl*100}%</span> e seu lucro aumentaria para R$ <span style="color: #68e968;">${vendasControl.toLocaleString()}</span>.</p>`;
 
     } else {
         mensagemCalculadora.innerHTML = `<img src="../img/Logo/logoWhitesmoke.png" alt="">`;
