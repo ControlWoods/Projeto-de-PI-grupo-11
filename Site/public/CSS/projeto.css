@@ -86,7 +86,7 @@ body{
 .banner{
     height: var(--tamanho-banner);
     background-size: cover;
-    background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.800) 0%, rgba(0, 0, 0, 0.377) 100%), url(assets/img/armazem.jpg); 
+    background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.800) 0%, rgba(0, 0, 0, 0.377) 100%), url(../assets/armazem.jpg); 
     align-items: center;
     justify-content: center;
     padding-top: 200px;
@@ -169,11 +169,11 @@ body{
 /* telaInicial calculadora */
 
 .txtCalculadora{
-    padding-top: 65px;
+    padding-top: 65px; 
 }
 
 .img_calculadora{
-    background-image: url("assets/img/crescimento.png") ;
+    background-image: url("../assets/crescimento.png") ;
     background-size: cover;
     width: 100%;
 }
