@@ -3,7 +3,7 @@ var path = require("path");  // Adicione esta linha para importar o módulo path
 var router = express.Router("");
 
 router.get("/", function (req, res) {
-    res.sendFile(path.join(__dirname, "../../public/html/projeto.html"));
+    res.sendFile(path.join(__dirname, "../../public/projeto.html"));
 });
 
 module.exports = router;
