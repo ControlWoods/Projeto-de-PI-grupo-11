@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=MonteCarlo&display=swap');
+@import url('https://fonts.googleapis.com/css2? family= Poppins:wght@100;200;300;400;500;600;700 & family= Rubik+Mono+One & display= trocar');
+
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+    background-color: #E2D9C7;
+}
+
+.menu-lateral {
+    position: absolute;
+    height: 100vh;
+    width: 70px;
+    top: 0;
+    left: 0;
+
+    background-color: #1E0C06;
+    border-left: 10px solid #1E0C06;
+
+    overflow-x: hidden;
+    transition: 0.5s;
+    position: fixed;
+}
+
+.logo {
+    padding: 20px 0 0 2px;
+}
+
+.logo img {
+    width: 200px;
+}
+
+.menu-lateral:hover {
+    width: 300px;
+}
+
+.menu-lateral ul {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    padding-left: 80px;
+    padding-top: 250px;
+
+    height: 30px;
+    line-height: 60px;
+    white-space: nowrap;
+}
+
+.menu-lateral ul li {
+    position: relative;
+    list-style: none;
+    width: 100%;
+}
+
+.menu-lateral ul li button {
+    background-color: #BA9E76;
+    border: none;
+    border-radius: 10px;
+
+    padding: 10px 30px 10px 30px;
+}
+
+.menu-lateral ul li select {
+    background-color: #BA9E76;
+    border: none;
+    border-radius: 10px;
+
+    padding: 10px 30px 10px 30px;
+}
+
+.menu-lateral ul li button.sair {
+    padding: 10px 55px 10px 55px;
+}
+
+/* .menu-lateral ul li a .icon {
+    position: relative;
+    display: block;
+
+    min-width: 60px;
+    height: 60px;
+    text-align: center;
+    line-height: 70px;
+}
+
+.menu-lateral ul li a .icon ion-icon{
+    position: relative;
+    font-size: 1.5rem;
+    z-index: 1;
+}
+} */
+
+select {
+    border: none;
+    border-radius: 10px;
+
+    padding: 0 10px 0 10px;
+}
