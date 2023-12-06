@@ -1,40 +1,157 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../CSS/CSS_telaCadastro.css">
-    <link rel="stylesheet" href="../../CSS/projetoLogin.css">
+    <link rel="stylesheet" href="./CSS/CSS_telaCadastro.css">
+    <link rel="stylesheet" href="./CSS/projetoLogin.css">
     <title>Document</title>
 </head>
+
 <body>
     <a href="projeto.html">
-        <img class="logoCadastro" src="../../CSS/img/Logo/logoBlack.png">
+        <img class="logoCadastro" src="./CSS/img/Logo/logoBlack.png">
     </a>
     <div class="main">
         <div class="formulario">
             <div class="containerinputs">
-            <div class="box-inputs">
-                <span class="span-texto">Nome da empresa:</span>
-                <input type="text" id="input_nome" class="ipt-login">
-                <span class="span-texto">Email:</span>
-                <input type="text" id="input_email" class="ipt-login">
-                <span class="span-texto">Senha:</span>
-                <input type="password" id="input_senha" class="ipt-login">
-                <span class="span-texto">Repetir senha:</span>
-                <input type="password" id="input_repetirsenha" class="ipt-login" >
+                <div class="box-inputs">
+                    <span class="span-texto">Nome da empresa:</span>
+                    <input type="text" id="nome" class="ipt-login">
+
+                    <span class="span-texto">Email:</span>
+                    <input type="text" id="email" class="ipt-login">
+
+                    <span class="span-texto">Senha:</span>
+                    <input type="password" id="senha" class="ipt-login">
+
+                    <span class="span-texto">Confimar senha:</span>
+                    <input type="password" id="confirmar_senha" class="ipt-login">
+                </div>
+                <div class="box-inputs2">
+                    <span class="span-texto">CNPJ:</span>
+                    <input type="text" id="cnpj" class="ipt-login">
+
+                    <span class="span-texto">Telefone fixo:</span>
+                    <input type="text" id="telFixo" class="ipt-login">
+
+                    <span class="span-texto">Telefone celular:</span>
+                    <input type="text" id="telCelular" class="ipt-login">
+                </div>
             </div>
-            <div class="box-inputs2">
-                <span class="span-texto">CNPJ:</span>
-                <input type="text" id="input_cnpj" class="ipt-login">
-                <span class="span-texto">Telefone fixo:</span>
-                <input type="text" id="input_telFixo" class="ipt-login">
-                <span class="span-texto">Telefone celular:</span>
-                <input type="text" id="input_telCelular" class="ipt-login">
-            </div>
-        </div>
-        <button onclick="Cadastrar()" class="botao">Cadastrar</button>
+            <button onclick="Cadastrar()" class="botao">Cadastrar</button>
         </div>
     </div>
 </body>
+
 </html>
+
+<script>
+    function cadastrar() {
+        //   aguardar();
+
+        var nome = nome.value;
+        var email = email.value;
+        var senha = senha.value;
+        var confirmar_senha = confirmar_senha.value;
+        var cnpj = cnpj.value;
+        var telFixo = telFixo.value;
+        var telCelular = telCelular.value;
+
+        // nome
+        // email
+        // senha
+        // confirmar_senha
+        // cnpj
+        // telFixo
+        // telCelular
+
+
+        if (
+            nome == "" ||
+            email == "" ||
+            senha == "" ||
+            cnpj == "" ||
+            telFixo == "" ||
+            telCelular == ""
+        ) {
+            // cardErro.style.display = "block";
+            // mensagem_erro.innerHTML =
+            //     "(Mensagem de erro para todos os campos em branco)";
+            alert("campo em branco")
+
+            // finalizarAguardar();
+            return false;
+        } else {
+            setInterval(sumirMensagem, 5000);
+        }
+
+        // Enviando o valor da nova input
+        fetch("/usuarios/cadastrar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+                // crie um atributo que recebe o valor recuperado aqui
+                // Agora vá para o arquivo routes/usuario.js
+                // nomeServer: nomeVar,
+                // emailServer: emailVar,
+                // senhaServer: senhaVar,
+                // empresaServer: empresaVar
+                nomeServer: nome,
+                emailServer: email,
+                senhaServer: senha,
+                cnpjServer: cnpj,
+                telFixoServer: telFixo,
+                telCelularServer: telCelular
+            }),
+        })
+            .then(function (resposta) {
+                console.log("resposta: ", resposta);
+
+                if (resposta.ok) {
+                    // cardErro.style.dis
+                    // mensagem_erro.innerHTML = "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
+
+                    alert("Cadastro realizado com sucesso! Redirecionando para tela de Login...");
+
+                    setTimeout(() => {
+                        window.location = "projetoLogin.html";
+                    }, "2000");
+
+                    // limparFormulario();
+                    // // finalizarAguardar();
+                } else {
+                    throw "Houve um erro ao tentar realizar o cadastro!";
+                }
+            })
+            .catch(function (resposta) {
+                console.log(`#ERRO: ${resposta}`);
+                // finalizarAguardar();
+            });
+
+        return false;
+    }
+
+    // function listar() {
+    //     fetch("/empresas/listar", {
+    //         method: "GET",
+    //     })
+    //         .then(function (resposta) {
+    //             resposta.json().then((empresas) => {
+    //                 empresas.forEach((empresa) => {
+    //                     listaEmpresas.innerHTML += `<option value='${empresa.id}'>${empresa.cnpj}</option>`;
+    //                 });
+    //             });
+    //         })
+    //         .catch(function (resposta) {
+    //             console.log(`#ERRO: ${resposta}`);
+    //         });
+    // }
+
+    // function sumirMensagem() {
+    //     cardErro.style.display = "none";
+    // }
+</script>
