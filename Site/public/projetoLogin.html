@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,6 +10,7 @@
     <link rel="stylesheet" href="./CSS/projetoLogin.css">
     <title>Document</title>
 </head>
+
 <body>
 
     <a href="projeto.html">
@@ -17,20 +19,22 @@
 
     <div class="card-login">
         <div class="saudacao">
-            
+
             <img class="circulo" src="./assets/Ellipse 5.svg">
-            <img class="logo-saudacao" src="./assets/Logo/logoBlack.png">
+            <img class="logo-saudacao" src="./assets/Logo/logoWhitesmoke.png">
             <h1 class="titulo-bemvindo">Bem - Vindo</h1>
 
         </div>
-        
+
         <div class="conteudo">
             <p class="p-texto">E-mail</p>
             <input class="ipt-login" id="input_email" type="text">
             <div class="mensagem-erro-email" id="erro_email">Seu e-mail está incorreto!</div>
+
             <p class="p-texto">Senha</p>
             <input class="ipt-login" id="input_senha" type="text">
             <div class="mensagem-erro-senha" id="erro_senha">Sua senha está incorreta!</div>
+
             <button class="btn-login" onclick="login()"> Entrar </button>
 
             <p class="link">Não tem cadastro? <a class="link-cadastro" href="telaCadastro.html">Clique aqui</a></p>
@@ -38,22 +42,96 @@
     </div>
 
 </body>
+
 </html>
 
 <script>
 
+    // function login() {
+    //     var email = input_email.value
+    //     var senha = Number(input_senha.value)
+
+    //     if (email != "foda@gmail.com" || senha != 123) {
+    //         erro_email.style.display = "block"
+    //         erro_senha.style.display = "block"
+    //     } else {
+    //         erro_email.style.display = "none"
+    //         erro_senha.style.display = "none"
+    //         window.location = "usuario.html"
+    //     }
+
+    // }
+
     function login() {
-        var email = input_email.value
-        var senha = Number(input_senha.value)
+        // aguardar();
 
-        if (email != "foda@gmail.com" || senha != 123) {
-            erro_email.style.display = "block"
-            erro_senha.style.display = "block"
-        } else {
-            erro_email.style.display = "none"
-            erro_senha.style.display = "none"
-            window.location = "usuario.html"
+        var email = input_email.value;
+        var senha = input_senha.value;
+
+        if (email == "" || senha == "") {
+            // cardErro.style.display = "block"
+            // mensagem_erro.innerHTML = "(Mensagem de erro para todos os campos em branco)";
+            // finalizarAguardar();
+            alert("Erro ao fazer login");
+            return false;
         }
+        else {
+            console.log("FORM LOGIN: ", email);
+            console.log("FORM SENHA: ", senha);
 
+            fetch("/usuarios/autenticar", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    emailServer: email,
+                    senhaServer: senha
+                })
+            }).then(function (resposta) {
+                console.log("ESTOU NO THEN DO entrar()!")
+
+                if (resposta.ok) {
+                    console.log(resposta);
+
+                    resposta.json().then(json => {
+                        console.log(json);
+                        console.log(JSON.stringify(json));
+
+                        sessionStorage.ID_USUARIO = json.idEmpresa;
+                        sessionStorage.NOME_USUARIO = json.nome;
+                        sessionStorage.EMAIL_USUARIO = json.email;
+                        sessionStorage.CNPJ_USUARIO = json.cnpj;
+                        sessionStorage.TELFIXO_USUARIO = json.telFixo;
+                        sessionStorage.TELCELULAR_USUARIO = json.telCelular;
+
+                        // sessionStorage.AQUARIOS = JSON.stringify(json.aquarios)
+
+                        setTimeout(function () {
+                            window.location = "usuario.html";
+                        }, 1000); // apenas para exibir o loading
+
+                    });
+
+                } else {
+
+                    console.log("Houve um erro ao tentar realizar o login!");
+
+                    resposta.text().then(texto => {
+                        console.error(texto);
+                        // finalizarAguardar(texto);
+                    });
+                }
+
+            }).catch(function (erro) {
+                console.log(erro);
+            })
+
+            return false;
+        }
     }
+
+    // function sumirMensagem() {
+    //     cardErro.style.display = "none"
+    // }
 </script>

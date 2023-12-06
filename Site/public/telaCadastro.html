@@ -18,29 +18,29 @@
             <div class="containerinputs">
                 <div class="box-inputs">
                     <span class="span-texto">Nome da empresa:</span>
-                    <input type="text" id="nome" class="ipt-login">
+                    <input type="text" id="input_nome" class="ipt-login">
 
                     <span class="span-texto">Email:</span>
-                    <input type="text" id="email" class="ipt-login">
+                    <input type="text" id="input_email" class="ipt-login">
 
                     <span class="span-texto">Senha:</span>
-                    <input type="password" id="senha" class="ipt-login">
+                    <input type="password" id="input_senha" class="ipt-login">
 
                     <span class="span-texto">Confimar senha:</span>
-                    <input type="password" id="confirmar_senha" class="ipt-login">
+                    <input type="password" id="input_confirmar_senha" class="ipt-login">
                 </div>
                 <div class="box-inputs2">
                     <span class="span-texto">CNPJ:</span>
-                    <input type="text" id="cnpj" class="ipt-login">
+                    <input type="text" id="input_cnpj" class="ipt-login">
 
                     <span class="span-texto">Telefone fixo:</span>
-                    <input type="text" id="telFixo" class="ipt-login">
+                    <input type="text" id="input_telFixo" class="ipt-login">
 
                     <span class="span-texto">Telefone celular:</span>
-                    <input type="text" id="telCelular" class="ipt-login">
+                    <input type="text" id="input_telCelular" class="ipt-login">
                 </div>
             </div>
-            <button onclick="Cadastrar()" class="botao">Cadastrar</button>
+            <button onclick="cadastrar()" class="botao">Cadastrar</button>
         </div>
     </div>
 </body>
@@ -51,13 +51,13 @@
     function cadastrar() {
         //   aguardar();
 
-        var nome = nome.value;
-        var email = email.value;
-        var senha = senha.value;
-        var confirmar_senha = confirmar_senha.value;
-        var cnpj = cnpj.value;
-        var telFixo = telFixo.value;
-        var telCelular = telCelular.value;
+        var nome = input_nome.value;
+        var email = input_email.value;
+        var senha = input_senha.value;
+        var confirmar_senha = input_confirmar_senha.value;
+        var cnpj = input_cnpj.value;
+        var telFixo = input_telFixo.value;
+        var telCelular = input_telCelular.value;
 
         // nome
         // email
@@ -72,9 +72,9 @@
             nome == "" ||
             email == "" ||
             senha == "" ||
-            cnpj == "" ||
-            telFixo == "" ||
-            telCelular == ""
+            cnpj == "" //||
+            // telFixo == "" ||
+            // telCelular == ""
         ) {
             // cardErro.style.display = "block";
             // mensagem_erro.innerHTML =
@@ -84,10 +84,7 @@
             // finalizarAguardar();
             return false;
         } else {
-            setInterval(sumirMensagem, 5000);
-        }
-
-        // Enviando o valor da nova input
+            // Enviando o valor da nova input
         fetch("/usuarios/cadastrar", {
             method: "POST",
             headers: {
@@ -134,6 +131,7 @@
 
         return false;
     }
+        }
 
     // function listar() {
     //     fetch("/empresas/listar", {
