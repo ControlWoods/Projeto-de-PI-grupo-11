@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./CSS/CSS_telaCadastro.css">
     <link rel="stylesheet" href="./CSS/projetoLogin.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <title>Document</title>
 </head>
 
@@ -18,26 +19,28 @@
             <div class="containerinputs">
                 <div class="box-inputs">
                     <span class="span-texto">Nome da empresa:</span>
-                    <input type="text" id="input_nome" class="ipt-login">
-
+                    <input type="text" id="input_input_nome" class="input-login">
+                    <span id="mensagem_nome" class="mensagem_erro"></span>
                     <span class="span-texto">Email:</span>
-                    <input type="text" id="input_email" class="ipt-login">
-
+                    <input type="text" id="input_input_email" class="input-login">
+                    <span id="mensagem_email" class="mensagem_erro"></span>
                     <span class="span-texto">Senha:</span>
-                    <input type="password" id="input_senha" class="ipt-login">
-
+                    <input type="password" id="input_input_senha" class="input-login">
+                    <span id="mensagem_senha" class="mensagem_erro"></span>
                     <span class="span-texto">Confimar senha:</span>
-                    <input type="password" id="input_confirmar_senha" class="ipt-login">
+                    <input type="password" id="input_input_confirmar_senha" class="input-login">
+                    <span id="mensagem_confirmacaosenha" class="mensagem_erro"></span>
                 </div>
                 <div class="box-inputs2">
                     <span class="span-texto">CNPJ:</span>
-                    <input type="text" id="input_cnpj" class="ipt-login">
-
+                    <input type="text" id="input_input_cnpj" class="input-login">
+                    <span id="mensagem_cnpj" class="mensagem_erro"></span>
                     <span class="span-texto">Telefone fixo:</span>
-                    <input type="text" id="input_telFixo" class="ipt-login">
-
+                    <input type="text" id="input_input_telFixo" class="input-login">
+                    <span id="mensagem_telFixo" class="mensagem_erro"></span>
                     <span class="span-texto">Telefone celular:</span>
-                    <input type="text" id="input_telCelular" class="ipt-login">
+                    <input type="text" id="input_input_telCelular" class="input-login">
+                    <span id="mensagem_telCelular" class="mensagem_erro"></span>
                 </div>
             </div>
             <button onclick="cadastrar()" class="botao">Cadastrar</button>
@@ -51,13 +54,32 @@
     function cadastrar() {
         //   aguardar();
 
-        var nome = input_nome.value;
-        var email = input_email.value;
-        var senha = input_senha.value;
-        var confirmar_senha = input_confirmar_senha.value;
-        var cnpj = input_cnpj.value;
-        var telFixo = input_telFixo.value;
-        var telCelular = input_telCelular.value;
+        var nome = input_input_nome.value;
+        var email = input_input_email.value;
+        var senha = input_input_senha.value;
+        var confirmar_senha = input_input_confirmar_senha.value;
+        var cnpj = input_input_cnpj.value;
+        var telFixo = input_input_telFixo.value;
+        var telCelular = input_input_telCelular.value;
+        var arroba = email.indexOf("@");
+        var emailCorreto=email.endsWith(".com") && arroba > 0;
+        var numeroS = senha.indexOf(0)||
+        senha.indexOf(1)||
+        senha.indexOf(2)||
+        senha.indexOf(3)||
+        senha.indexOf(4)||
+        senha.indexOf(5)||
+        senha.indexOf(6)||
+        senha.indexOf(7)||
+        senha.indexOf(8)||
+        senha.indexOf(9);
+        mensagem_senha.innerHTML='';
+        mensagem_confirmacaosenha.innerHTML='';
+        mensagem_nome.innerHTML='';
+        mensagem_email.innerHTML='';
+        mensagem_cnpj.innerHTML='';
+        mensagem_telFixo.innerHTML='';
+        mensagem_telCelular.innerHTML='';
 
         // nome
         // email
@@ -68,70 +90,98 @@
         // telCelular
 
 
-        if (
-            nome == "" ||
-            email == "" ||
-            senha == "" ||
-            cnpj == "" //||
-            // telFixo == "" ||
-            // telCelular == ""
-        ) {
-            // cardErro.style.display = "block";
-            // mensagem_erro.innerHTML =
-            //     "(Mensagem de erro para todos os campos em branco)";
-            alert("campo em branco")
-
-            // finalizarAguardar();
-            return false;
-        } else {
-            // Enviando o valor da nova input
-        fetch("/usuarios/cadastrar", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify({
-                // crie um atributo que recebe o valor recuperado aqui
-                // Agora vá para o arquivo routes/usuario.js
-                // nomeServer: nomeVar,
-                // emailServer: emailVar,
-                // senhaServer: senhaVar,
-                // empresaServer: empresaVar
-                nomeServer: nome,
-                emailServer: email,
-                senhaServer: senha,
-                cnpjServer: cnpj,
-                telFixoServer: telFixo,
-                telCelularServer: telCelular
-            }),
-        })
-            .then(function (resposta) {
-                console.log("resposta: ", resposta);
-
-                if (resposta.ok) {
-                    // cardErro.style.dis
-                    // mensagem_erro.innerHTML = "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
-
-                    alert("Cadastro realizado com sucesso! Redirecionando para tela de Login...");
-
-                    setTimeout(() => {
-                        window.location = "projetoLogin.html";
-                    }, "2000");
-
-                    // limparFormulario();
-                    // // finalizarAguardar();
-                } else {
-                    throw "Houve um erro ao tentar realizar o cadastro!";
-                }
-            })
-            .catch(function (resposta) {
-                console.log(`#ERRO: ${resposta}`);
-                // finalizarAguardar();
-            });
-
-        return false;
+        // if (
+        //     nome == "" ||
+        //     email == "" ||
+        //     senha == "" ||
+        //     cnpj == "" ||
+        //     telFixo == "" ||
+        //     telCelular == ""
+        // ) {
+        //     alert("campo em branco")
+        //     // finalizarAguardar();
+        //     return false;
+        // }
+      
+    if(cnpj==''||  nome==''  ||email==''  ||confirmar_senha=='' ||senha=='' || telFixo=='' || telCelular==''){
+        // alert("Preencha todos os campos")
+        Swal.fire({
+        title: 'Erro',
+        text: 'Preencha todos os campos',
+        icon: 'error',
+        confirmButtonText: 'Ok'
+})
+        // mensagem_cnpj.innerHTML='*Este campo é obrigátorio'
+    }else if(emailCorreto==false){
+        mensagem_email.innerHTML+="Email inválido";
     }
+    else if(senha.length < 8){
+        mensagem_senha.innerHTML+="Sua senha precisa ter no minímo 8 caracteres";
+    }else if(numeroS==false){
+        mensagem_senha.innerHTML+='Sua senha precisa ter números'
+    }    
+    else if(senha.toLowerCase()==senha){
+        mensagem_senha.innerHTML+="A senha precisa de uma letra maiúscula";
+    } else if(senha.toUpperCase()==senha){
+        mensagem_senha.innerHTML+="A senha precisa de uma letra minúscula";
+    }
+    else if(senha!=confirmar_senha){
+        mensagem_confirmacaosenha.innerHTML="As senhas não são compativeis";
+    }
+    else if(cnpj.length<14 || cnpj.length>14){
+            mensagem_cnpj.innerHTML='Insira um CNPJ válido'
         }
+    else if(telFixo.length>8 || telFixo.length<8){
+        mensagem_telFixo.innerHTML+="Digite um telefone válido"
+    }
+    else if(telCelular.length <9 || telCelular.length >9){
+        mensagem_telCelular.innerHTML+="Digite um telefone válido"
+    }
+     else {
+        //  setInterval(sumirMensagem, 5000);
+     // Enviando o valor da nova input
+     fetch("/usuarios/cadastrar", {
+         method: "POST",
+         headers: {
+             "Content-Type": "application/json",
+         },
+         body: JSON.stringify({
+             // crie um atributo que recebe o valor recuperado aqui
+             // Agora vá para o arquivo routes/usuario.js
+             // nomeServer: nomeVar,
+             // emailServer: emailVar,
+             // senhaServer: senhaVar,
+             // empresaServer: empresaVar
+             nomeServer: nome,
+             emailServer: email,
+             senhaServer: senha,
+             cnpjServer: cnpj,
+             telFixoServer: telFixo,
+             telCelularServer: telCelular
+         }),
+     })
+         .then(function (resposta) {
+             console.log("resposta: ", resposta);
+             if (resposta.ok) {
+                 // cardErro.style.dis
+                 // mensagem_erro.innerHTML = "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
+                 alert("Cadastro realizado com sucesso! Redirecionando para tela de Login...");
+                 setTimeout(() => {
+                     window.location = "projetoLogin.html";
+                 }, "2000");
+                 // limparFormulario();
+                 // // finalizarAguardar();
+             } else {
+                 throw "Houve um erro ao tentar realizar o cadastro!";
+             }
+         })
+         .catch(function (resposta) {
+             console.log(`#ERRO: ${resposta}`);
+             // finalizarAguardar();
+         });
+     return false;
+    }
+}
 
     // function listar() {
     //     fetch("/empresas/listar", {
