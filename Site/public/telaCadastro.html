@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./CSS/CSS_telaCadastro.css">
     <link rel="stylesheet" href="./CSS/projetoLogin.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <title>Document</title>
 </head>
 
@@ -103,7 +104,13 @@
         // }
       
     if(cnpj==''||  nome==''  ||email==''  ||confirmar_senha=='' ||senha=='' || telFixo=='' || telCelular==''){
-        alert("Preencha todos os campos")
+        // alert("Preencha todos os campos")
+        Swal.fire({
+        title: 'Erro',
+        text: 'Preencha todos os campos',
+        icon: 'error',
+        confirmButtonText: 'Ok'
+})
         // mensagem_cnpj.innerHTML='*Este campo é obrigátorio'
     }else if(emailCorreto==false){
         mensagem_email.innerHTML+="Email inválido";
