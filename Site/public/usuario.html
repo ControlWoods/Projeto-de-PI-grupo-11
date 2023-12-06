@@ -7,8 +7,9 @@
     <link rel="stylesheet" href="./CSS/CSS_Usuario.css">
 </head>
 <body>
-
+    
     <div class="menu-lateral">
+        <button onclick="sair()">sair</button>
         <div class="logo">
             <img src="./assets/Logo/logoWhitesmoke.png">
         </div>
@@ -40,3 +41,10 @@
 <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </html>
+
+<script>
+   function sair() {
+    sessionStorage.clear();
+    window.location = "projeto.html";
+   }
+</script>

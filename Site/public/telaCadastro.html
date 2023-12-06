@@ -21,26 +21,33 @@
                     <span class="span-texto">Nome da empresa:</span>
                     <input type="text" id="input_input_nome" class="input-login">
                     <span id="mensagem_nome" class="mensagem_erro"></span>
+
                     <span class="span-texto">Email:</span>
                     <input type="text" id="input_input_email" class="input-login">
                     <span id="mensagem_email" class="mensagem_erro"></span>
+
                     <span class="span-texto">Senha:</span>
                     <input type="password" id="input_input_senha" class="input-login">
                     <span id="mensagem_senha" class="mensagem_erro"></span>
+
                     <span class="span-texto">Confimar senha:</span>
                     <input type="password" id="input_input_confirmar_senha" class="input-login">
                     <span id="mensagem_confirmacaosenha" class="mensagem_erro"></span>
+
                 </div>
                 <div class="box-inputs2">
                     <span class="span-texto">CNPJ:</span>
                     <input type="text" id="input_input_cnpj" class="input-login">
                     <span id="mensagem_cnpj" class="mensagem_erro"></span>
+
                     <span class="span-texto">Telefone fixo:</span>
                     <input type="text" id="input_input_telFixo" class="input-login">
                     <span id="mensagem_telFixo" class="mensagem_erro"></span>
+
                     <span class="span-texto">Telefone celular:</span>
                     <input type="text" id="input_input_telCelular" class="input-login">
                     <span id="mensagem_telCelular" class="mensagem_erro"></span>
+
                 </div>
             </div>
             <button onclick="cadastrar()" class="botao">Cadastrar</button>
@@ -61,6 +68,9 @@
         var cnpj = input_input_cnpj.value;
         var telFixo = input_input_telFixo.value;
         var telCelular = input_input_telCelular.value;
+
+
+
         var arroba = email.indexOf("@");
         var emailCorreto=email.endsWith(".com") && arroba > 0;
         var numeroS = senha.indexOf(0)||
@@ -73,6 +83,7 @@
         senha.indexOf(7)||
         senha.indexOf(8)||
         senha.indexOf(9);
+
         mensagem_senha.innerHTML='';
         mensagem_confirmacaosenha.innerHTML='';
         mensagem_nome.innerHTML='';
