@@ -8,6 +8,7 @@ body{
     box-sizing: border-box;
     text-decoration: none;
     font-family: 'Poppins', sans-serif;
+    background-color: #E2D9C7;
 }
 
 .menu-lateral {
@@ -34,7 +35,7 @@ body{
 }
 
 .menu-lateral:hover {
-    width: 400px;
+    width: 300px;
 }
 
 .menu-lateral ul {
@@ -43,28 +44,41 @@ body{
     left: 0;
 
     width: 100%;
-    padding-left: 5px;
-    padding-top: 200px;
+    padding-left: 80px;
+    padding-top: 250px;
+
+    height: 30px;
+    line-height: 60px;
+    white-space: nowrap;
 }
 
 .menu-lateral ul li {
     position: relative;
     list-style: none;
     width: 100%;
-
-    border-top-left-radius: 20px;
-    border-bottom-left-radius: 20px;
 }
 
-.menu-lateral ul li a {
-    position: relative;
-    display: flex;
-    width: 100%;
-    text-decoration: none;
-    color: #F5F5F5;
+.menu-lateral ul li button {
+    background-color: #BA9E76;
+    border: none;
+    border-radius: 10px;
+
+    padding: 10px 30px 10px 30px;
 }
 
-.menu-lateral ul li a .icon {
+.menu-lateral ul li select {
+    background-color: #BA9E76;
+    border: none;
+    border-radius: 10px;
+
+    padding: 10px 30px 10px 30px;
+}
+
+.menu-lateral ul li button.sair {
+    padding: 10px 55px 10px 55px;
+}
+
+/* .menu-lateral ul li a .icon {
     position: relative;
     display: block;
 
@@ -79,15 +93,7 @@ body{
     font-size: 1.5rem;
     z-index: 1;
 }
-
-.menu-lateral ul li a .titulo {
-    position: relative;
-    display: block;
-    padding-left: 10px;
-    height: 60px;
-    line-height: 60px;
-    white-space: nowrap;
-}
+} */
 
 select {
     border: none;
