@@ -89,7 +89,47 @@ function cadastrar(req, res) {
     }
 }
 
+function galpao(req, res) {
+    // Crie uma variável que vá recuperar os valores do arquivo cadastro.html
+    // var nome = req.body.nomeServer;
+    // var email = req.body.emailServer;
+    // var senha = req.body.senhaServer;
+    // var empresaId = req.body.empresaServer;
+    // var nome = req.body.nomeServer;
+    // var email = req.body.emailServer;
+    // var senha = req.body.senhaServer;
+    // var cnpj = req.body.cnpjServer;
+    // var telFixo = req.body.telFixoServer;
+    // var telCelular = req.body.telCelularServer;
+    var nomeGalpao = req.body.nomeGalpaoServer;
+    var idEmpresa = req.body.idEmpresaServer;
+
+    // Faça as validações dos valores
+    if (nomeGalpao == undefined) {
+        res.status(400).send("nome do galpão está undefined!");
+    } else {
+
+        // Passe os valores como parâmetro e vá para o arquivo usuarioModel.js
+        usuarioModel.galpao(nomeGalpao, idEmpresa)
+            .then(
+                function (resultado) {
+                    res.json(resultado);
+                }
+            ).catch(
+                function (erro) {
+                    console.log(erro);
+                    console.log(
+                        "\nHouve um erro ao realizar o cadastro do galpão! Erro: ",
+                        erro.sqlMessage
+                    );
+                    res.status(500).json(erro.sqlMessage);
+                }
+            );
+    }
+}
+
 module.exports = {
     autenticar,
-    cadastrar
+    cadastrar,
+    galpao
 }

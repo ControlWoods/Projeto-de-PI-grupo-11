@@ -19,33 +19,33 @@
             <div class="containerinputs">
                 <div class="box-inputs">
                     <span class="span-texto">Nome da empresa:</span>
-                    <input type="text" id="input_input_nome" class="input-login">
+                    <input type="text" id="input_nome" class="input-login">
                     <span id="mensagem_nome" class="mensagem_erro"></span>
 
                     <span class="span-texto">Email:</span>
-                    <input type="text" id="input_input_email" class="input-login">
+                    <input type="text" id="input_email" class="input-login">
                     <span id="mensagem_email" class="mensagem_erro"></span>
 
                     <span class="span-texto">Senha:</span>
-                    <input type="password" id="input_input_senha" class="input-login">
+                    <input type="password" id="input_senha" class="input-login">
                     <span id="mensagem_senha" class="mensagem_erro"></span>
 
                     <span class="span-texto">Confimar senha:</span>
-                    <input type="password" id="input_input_confirmar_senha" class="input-login">
+                    <input type="password" id="input_confirmar_senha" class="input-login">
                     <span id="mensagem_confirmacaosenha" class="mensagem_erro"></span>
 
                 </div>
                 <div class="box-inputs2">
                     <span class="span-texto">CNPJ:</span>
-                    <input type="text" id="input_input_cnpj" class="input-login">
+                    <input type="text" id="input_cnpj" class="input-login">
                     <span id="mensagem_cnpj" class="mensagem_erro"></span>
 
                     <span class="span-texto">Telefone fixo:</span>
-                    <input type="text" id="input_input_telFixo" class="input-login">
+                    <input type="text" id="input_telFixo" class="input-login">
                     <span id="mensagem_telFixo" class="mensagem_erro"></span>
 
                     <span class="span-texto">Telefone celular:</span>
-                    <input type="text" id="input_input_telCelular" class="input-login">
+                    <input type="text" id="input_telCelular" class="input-login">
                     <span id="mensagem_telCelular" class="mensagem_erro"></span>
 
                 </div>
@@ -61,13 +61,13 @@
     function cadastrar() {
         //   aguardar();
 
-        var nome = input_input_nome.value;
-        var email = input_input_email.value;
-        var senha = input_input_senha.value;
-        var confirmar_senha = input_input_confirmar_senha.value;
-        var cnpj = input_input_cnpj.value;
-        var telFixo = input_input_telFixo.value;
-        var telCelular = input_input_telCelular.value;
+        var nome = input_nome.value;
+        var email = input_email.value;
+        var senha = input_senha.value;
+        var confirmar_senha = input_confirmar_senha.value;
+        var cnpj = input_cnpj.value;
+        var telFixo = input_telFixo.value;
+        var telCelular = input_telCelular.value;
 
 
 
@@ -142,10 +142,10 @@
     else if(cnpj.length<14 || cnpj.length>14){
             mensagem_cnpj.innerHTML='Insira um CNPJ válido'
         }
-    else if(telFixo.length>8 || telFixo.length<8){
+    else if(telFixo.length>10 || telFixo.length<10){
         mensagem_telFixo.innerHTML+="Digite um telefone válido"
     }
-    else if(telCelular.length <9 || telCelular.length >9){
+    else if(telCelular.length <11 || telCelular.length >11){
         mensagem_telCelular.innerHTML+="Digite um telefone válido"
     }
      else {

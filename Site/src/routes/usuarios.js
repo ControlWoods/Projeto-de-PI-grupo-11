@@ -12,4 +12,8 @@ router.post("/autenticar", function (req, res) {
     usuarioController.autenticar(req, res);
 });
 
+router.post("/galpao", function (req, res) {
+    usuarioController.galpao(req, res); 
+});
+
 module.exports = router;
