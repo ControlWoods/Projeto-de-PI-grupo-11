@@ -29,7 +29,7 @@ constraint fkE foreign key (fkEmpresa) references empresa(idEmpresa)
 create table registros (
 idRegistro int auto_increment,
 umidade float not null,
-dtHorario datetime not null,
+dtHorario datetime default current_timestamp,
 fkSensor int,
 constraint fkS foreign key (fkSensor) references sensores(idSensor),
 primary key(idRegistro, fkSensor)
@@ -50,6 +50,8 @@ insert into sensores values
 (null, 1, 1);
 
 select * from registros;
+
+
 insert into registros values
 (null, 32.0, "2020-04-12 12:00:00", 1);
 
