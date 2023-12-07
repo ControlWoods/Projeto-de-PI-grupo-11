@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Control Woods | Dasboard Usuário</title>
+    <link rel="stylesheet" href="../CSS/CSS_Graficos.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+
+<body>
+
+    <div class="menu-lateral">
+        <div class="logo">
+            <img src="./assets/Logo/logoWhitesmoke.png">
+        </div>
+
+        <ul>
+            <li class="lista">
+                <button class="informacao"> Informações </button>
+            </li>
+            <li class="lista">
+                <select id="galpoes" class="galpoes">
+                    <option value="galpao1">Galpão 1</option>
+                    <option value="galpao2">Galpão 2</option>
+                    <option value="galpao3">Galpão 3</option>
+                </select>
+            </li>
+            <li class="lista">
+                <button class="sair"> Sair </button>
+            </li>
+        </ul>
+    </div>
+
+    <div class="telaBranca">
+
+        <div class="inicioTela">
+            <p> Galpao 1 </p>
+            <span> ??/??/???? </span>
+        </div>
+        <hr>
+
+        <div class="primeira-caixa">
+            <div class="sensor">
+                <p> Sensor 1 </p>
+                <div class="kpi">
+                    <div class="alarme">
+
+                    </div>
+
+                    <div class="umidade">
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="dashboard">
+                <section>
+                    <canvas id="dht11Umidade"></canvas>
+                </section>
+            </div>
+        </div>
+
+        <!-- <div class="segunda-caixa">
+            <div class="sensor">
+                <p> Sensor 2 </p>
+                <div class="kpi">
+                    <div class="alarme">
+
+                    </div>
+
+                    <div class="umidade">
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="dashboard">
+                
+            </div>
+        </div>
+
+        <div class="terceira-caixa">
+            <div class="sensor">
+                <p> Sensor 3 </p>
+                <div class="kpi">
+                    <div class="alarme">
+
+                    </div>
+
+                    <div class="umidade">
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="dashboard">
+                
+            </div>
+        </div> -->
+
+        <hr>
+
+        <div class="caixa-historico">
+            <div class="historico">
+                <div class="selecionar">
+                    <p> Historico: </p>
+                    <select id="historico_grafico" name="data">
+                        <option value=""></option>
+                        <option value=""></option>
+                        <option value=""></option>
+                    </select>
+                </div>
+
+                <div class="kpi">
+                    <div class="alarme">
+
+                    </div>
+
+                    <div class="umidade">
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="dashboard">
+
+            </div>
+        </div>
+
+    </div>
+
+</body>
+
+</html>
+
+
+<script>
+    /* -- dht11Umidade -- */
+    var contextoDht11Umidade = document.getElementById('dht11Umidade').getContext('2d');
+    contextoDht11Umidade.canvas.width = 1000;
+    contextoDht11Umidade.canvas.height = 300;
+    var dht11Umidade = new Chart(
+        contextoDht11Umidade,
+        {
+            type: 'line',
+            data: {
+                datasets: [{
+                    label: 'Umidade',
+                    type: 'line',
+                    borderColor: ['#00000'],
+                    backgroundColor: ['#FDF0F0']
+                }]
+            },
+            options: {
+                scales: {
+                    xAxes: [{
+                        distribution: 'series',
+                        ticks: {
+                            beginAtZero: true
+                        }
+                    }],
+                    yAxes: [{
+                        scaleLabel: {
+                            display: true,
+                            labelString: 'Umidade'
+                        },
+                        ticks: {
+                            beginAtZero: true
+                        }
+                    }]
+                },
+                animation: {
+                    duration: 0
+                }
+            }
+        }
+    );
+
+    var paginacao = {};
+    var tempo = {};
+    function obterDados(grafico, endpoint) {
+        var http = new XMLHttpRequest();
+        http.open('GET', 'http://localhost:3000/sensores/' + endpoint, false);
+        http.send(null);
+        var valores = JSON.parse(http.responseText);
+        if (paginacao[endpoint] == null) {
+            paginacao[endpoint] = 0;
+        }
+        if (tempo[endpoint] == null) {
+            tempo[endpoint] = 0;
+        }
+        // Exibir à partir do último elemento exibido anteriormente
+        var ultimaPaginacao = paginacao[endpoint];
+        paginacao[endpoint] = valores.length;
+        var valores = valores.slice(ultimaPaginacao);
+        valores.forEach((valor) => {
+            //Máximo de 60 itens exibidos no gráfico
+            if (grafico.data.labels.length == 10 && grafico.data.datasets[0].data.length == 10) {
+                grafico.data.labels.shift();
+                grafico.data.datasets[0].data.shift();
+            }
+
+            grafico.data.labels.push(tempo[endpoint]++);
+            grafico.data.datasets[0].data.push(parseFloat(valor));
+            grafico.update();
+        })
+    }
+
+    setInterval(() => {
+        obterDados(dht11Umidade, 'dht11/umidade');
+    }, 30000);
+
+
+    const ctx = document.getElementById('myChart');
+
+    new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: ['Domingo', 'Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sábado'],
+            datasets: [{
+                label: 'Média umidade semanal',
+                data: [54, 33, 22, 35, 37, 41, 36],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+</script>

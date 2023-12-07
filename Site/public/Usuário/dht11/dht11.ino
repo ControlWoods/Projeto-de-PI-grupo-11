@@ -24,7 +24,7 @@ void setup()
 {
   pinMode(pinosensor,INPUT);
   Serial.begin(9600);
-  Serial.println("DHTxx test!");
+  // Serial.println("DHTxx test!");
   dht.begin();
 }
  
@@ -33,9 +33,9 @@ void loop()
   // A leitura da temperatura e umidade pode levar 250ms!
   // O atraso do sensor pode chegar a 2 segundos.
   float h = dht.readHumidity();
-  float t = dht.readTemperature();
+  // float t = dht.readTemperature();
   // testa se retorno é valido, caso contrário algo está errado.
-  if (isnan(t) || isnan(h)) 
+  if (isnan(h)) // isnan(t) || 
   {
     Serial.println("Failed to read from DHT");
   } 
@@ -45,40 +45,38 @@ void loop()
     Serial.print(h);
     Serial.print(";");
    // Serial.print("Temperatura: ");
-    Serial.print(t);
-    Serial.print(";");
-   //Serial.println();
+    // Serial.print(t);
+    // Serial.print(";");
+   Serial.println();
   }
 int sensorPin=A0;
 int sensorValue=0;
 
-int sensorLM35 = A5;
-float valorLM35 = analogRead(sensorLM35);
-delay(100);
-valorLM35 = analogRead(sensorLM35);
-float temperatura = valorLM35*0.00488;
-temperatura*=100;
+// int sensorLM35 = A5;
+// float valorLM35 = analogRead(sensorLM35);
+// delay(100);
+// valorLM35 = analogRead(sensorLM35);
+// float temperatura = valorLM35*0.00488;
+// temperatura*=100;
 
 //void loop(){
-  sensorValue = analogRead(sensorPin);
-  Serial.print(sensorValue);
-  Serial.print(";");
-  Serial.print(temperatura);
-  Serial.print(";");
+  // sensorValue = analogRead(sensorPin);
+  // Serial.print(sensorValue);
+  // Serial.print(";");
+  // Serial.print(temperatura);
+  // Serial.print(";");
 
 
-if (digitalRead(pinosensor)== LOW)
-{
-Serial.println("1");
-}
+// if (digitalRead(pinosensor)== LOW)
+// {
+// Serial.println("1");
+// }
 
-else
-{
-Serial.println("0");
-}
+// else
+// {
+// Serial.println("0");
+// }
 
 delay(1000);
-
-  
   }  
 //}
