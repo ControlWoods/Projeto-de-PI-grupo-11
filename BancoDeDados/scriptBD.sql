@@ -7,8 +7,8 @@ nome varchar(45) not null,
 email varchar(45) not null,
 senha varchar(45) not null,
 cnpj char(14) not null,
-telefoneFixo char(10),
-telefoneCelular char(11)
+telFixo char(10),
+telCelular char(11)
 );
 
 create table galpao (
@@ -39,7 +39,7 @@ select * from empresa;
 insert into empresa values 
 (null, 'teste', "teste", "oooii",1223333,070079797,80808808);
 
-select * from galpao; 
+select * from galpao;
 
 insert into galpao values 
 (null, 'galp1', 1);
