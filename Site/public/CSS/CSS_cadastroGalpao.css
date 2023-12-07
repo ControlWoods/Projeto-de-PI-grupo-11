@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Kaisei+Decol&family=Poppins&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: #E2D9C7;
+}
+
+.logo {
+    width: 200px;
+    padding: 30px;
+}
+
+.formulario{
+    width: 100%;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    background-color: #fff;
+    border-radius: 20px;
+
+    width: 600px;
+    height: 400px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.container p {
+    margin-left: -280px;
+    margin-bottom: 5px;
+
+    font-weight: bold;
+}
+
+.container input {
+    width: 450px;
+    height: 50px;
+
+    border: none;
+    border-radius: 50px;
+    border-top: 2px solid #000;
+    border-left: 2px solid #000;
+
+    background: #BA9E76;
+    box-shadow: 10px 10px 10px 0px rgba(0, 0, 0, 0.25);
+
+    padding: 15px;
+    color: white;
+    font-weight: bold;
+}
+
+.container button {
+    margin-top: 50px;
+    width: 140px;
+    height: 40px;
+    border-radius: 40px;
+    background-color: rgba(48, 30, 25, 0.85);
+    border: 3px inset rgba(0, 0, 0, 0.267);
+    color: whitesmoke;
+    font-size: 17px;
+    font-weight: bold;
+}
+
+.container button:hover {
+box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) inset;
+cursor: pointer;
+}
