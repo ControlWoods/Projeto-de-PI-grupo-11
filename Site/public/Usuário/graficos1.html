@@ -145,8 +145,10 @@
 <script>
     /* -- dht11Umidade -- */
     var contextoDht11Umidade = document.getElementById('dht11Umidade').getContext('2d');
+    
     contextoDht11Umidade.canvas.width = 1000;
     contextoDht11Umidade.canvas.height = 300;
+    
     var dht11Umidade = new Chart(
         contextoDht11Umidade,
         {
@@ -188,7 +190,7 @@
     var tempo = {};
     function obterDados(grafico, endpoint) {
         var http = new XMLHttpRequest();
-        http.open('GET', 'http://localhost:3000/sensores/' + endpoint, false);
+        http.open('GET', 'http://localhost:3333/Site/public/Usuário/graficos1.html' + endpoint, false);
         http.send(null);
         var valores = JSON.parse(http.responseText);
         if (paginacao[endpoint] == null) {
@@ -216,7 +218,7 @@
 
     setInterval(() => {
         obterDados(dht11Umidade, 'dht11/umidade');
-    }, 30000);
+    }, 33330);
 
 
     const ctx = document.getElementById('myChart');
