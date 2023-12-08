@@ -10,15 +10,16 @@
 
     <div class="menu-lateral">
         <div class="logo">
-            <img src="./assets/Logo/logoWhitesmoke.png">
+            <img src="./assets/Logo/logo white 100 x 312.png">
         </div>
         
         <ul>
             <li class="lista">
-                <button class="informacao"> Informações </button>
+                <button class="informacao" onclick="entrarInformacao()"> Informações </button>
             </li>
             <li class="lista">
-                <select id="galpoes" class="galpoes">
+                <select id="galpoes" class="galpoes" onclick="entrarGraficos()">
+                    <option value="selecione">Galpões</option>
                     <option value="galpao1">Galpão 1</option>
                     <option value="galpao2">Galpão 2</option>
                     <option value="galpao3">Galpão 3</option>
@@ -28,7 +29,7 @@
                 <button class="suporte"> Suporte </button>
             </li>
             <li class="lista">
-                <button class="sair"> Sair </button>
+                <button class="sair" onclick="sair()"> Sair </button>
             </li>
         </ul>
     </div>
@@ -40,20 +41,20 @@
 
         <div class="informacoes">
             <div class="titulo">
-              <h1>Olá, [empresa]</h1>
+              <h1><div id="b_usuario"></div></h1>
             </div>
 
             <div class="infos">
                 <p class="subtitulo">CNPJ</p>
-                <span class="info"></span>
+                <span class="info"><div id="cnpj" class="dadosUsuario"></div></span>
                 <p class="subtitulo">Email</p>
-                <span class="info"></span>
+                <span class="info"><div id="email" class="dadosUsuario"></div></span>
                 <p class="subtitulo">Telefone Fixo</p>
-                <span class="info"></span>
+                <span class="info"><div id="telFixo" class="dadosUsuario"></div></span>
                 <p class="subtitulo">Telefone Celular</p>
-                <span class="info"></span>
-                <p class="subtitulo">Localização</p>
-                <span class="info"></span>
+                <span class="info"><div id="telCelular" class="dadosUsuario"></div></span>
+                <!-- <p class="subtitulo">Localização</p>
+                <span class="info"></span> -->
             </div>
         </div>
     </div>
@@ -61,3 +62,32 @@
 <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </html>
+<script>
+    b_usuario.innerHTML= sessionStorage.NOME_USUARIO;
+    email.innerHTML= sessionStorage.EMAIL_USUARIO;
+    telFixo.innerHTML=sessionStorage.TELFIXO_USUARIO;
+    telCelular.innerHTML= sessionStorage.TELCELULAR_USUARIO;
+    cnpj.innerHTML=sessionStorage.CNPJ_USUARIO
+
+
+    function sair() {
+        sessionStorage.clear();
+        window.location = "projeto.html";
+    }
+    function entrarGraficos(){
+        if(galpoes.value=="galpao1"){
+            window.location="./Usuário/graficos1.html";
+        }
+        if(galpoes.value=="galpao2"){
+            window.location="./Usuário/graficos1.html";
+        }
+        if(galpoes.value=="galpao3"){
+            window.location="./Usuário/graficos1.html";
+        }
+
+        galpoes.value='selecione';
+    }
+    function entrarInformacao(){
+        window.location="informacoes.html"
+    }
+</script>
