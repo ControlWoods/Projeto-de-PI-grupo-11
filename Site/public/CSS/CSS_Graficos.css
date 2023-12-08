@@ -148,12 +148,20 @@ body{
     margin-bottom: 50px;
 }
 
-.alarme {
+#alarme {
     width: 150px;
     height: 100px;
-
-    background-color: red;
+    /* background-color: #ff0000;
+    background-color: #ffff00; */
+    background-color: #10d82a;
     border-radius: 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 20px;
+    color: white;
 }
 
 .umidade {
@@ -162,6 +170,13 @@ body{
 
     background-color: #1E0C06;
     border-radius: 100px;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 30px;
+    color: white;
 }
 
 .dashboard {

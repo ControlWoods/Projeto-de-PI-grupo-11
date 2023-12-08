@@ -54,11 +54,11 @@
 
                 <div class="kpi">
 
-                    <div class="alarme">
+                    <div id="alarme">
 
                     </div>
 
-                    <div class="umidade">
+                    <div class="umidade" id="div_alarme">
 
                     </div>
 
@@ -115,7 +115,7 @@
 
         <hr>
 
-        <div class="caixa-historico">
+        <!-- <div class="caixa-historico">
             <div class="historico">
                 <div class="selecionar">
                     <p> Historico: </p>
@@ -143,17 +143,51 @@
             </div>
         </div>
 
-    </div>
+    </div> -->
 
 </body>
 
 </html>
 
+<!-- ... (código anterior) ... -->
 
 <script>
+    var umidadeReal = [];
+    var horaUmidade = [];
+    var myChart;
 
-    var umidadeReal = [12, 19, 3, 5, 2, 3];;
-    var horaUmidade = ['02:30', '03:00', '03:30', '04:00', '04:30', '05:00'];
+    window.onload = function () {
+        // Inicializa o gráfico
+        criarGrafico();
+
+        // Atualiza os dados a cada intervalo de tempo (por exemplo, a cada 5 segundos)
+        setInterval(function () {
+            dadosGraficos();
+        }, 5000);
+    };
+
+    function criarGrafico() {
+        // Cria o gráfico inicial
+        const ctx = document.getElementById('myChart');
+        myChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: horaUmidade,
+                datasets: [{
+                    label: 'Umidade',
+                    data: umidadeReal,
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    }
 
     function dadosGraficos() {
         fetch("/grafico/dadosGraficos", {
@@ -161,57 +195,188 @@
             headers: {
                 "Content-Type": "application/json"
             },
-            body: JSON.stringify({
-            })
+            body: JSON.stringify({})
         })
             .then(function (resposta) {
                 console.log("ESTOU NO THEN DO dadosGraficos()!");
                 if (resposta.ok) {
-                    resposta.json().then(json => {
-
-                        // sessionStorage.P1_MUITO_TRANQUILO = json.P1_muitoTranquilo;
-                        // sessionStorage.P1_TRANQUILO = json.P1_tranquilo;
-                        // sessionStorage.P1_NEUTRO = json.P1_neutro;
-                        // sessionStorage.P1_MEDO = json.P1_medo;
-                        // sessionStorage.P1_MUITO_MEDO = json.P1_muitoMedo;
-
-                        umidadeReal.push(json.umidade);
-                        horaUmidade.push(json.dtHorario);
-                        // vt1.push(json.P1_neutro);
-                        // vt1.push(json.P1_medo);
-                        // vt1.push(json.P1_muitoMedo);
-
-                        // sessionStorage.P2_MUITO_TRANQUILO = json.P2_muitoTranquilo;
-                        // sessionStorage.P2_TRANQUILO = json.P2_tranquilo;
-                        // sessionStorage.P2_NEUTRO = json.P2_neutro;
-                        // sessionStorage.P2_MEDO = json.P2_medo;
-                        // sessionStorage.P2_MUITO_MEDO = json.P2_muitoMedo;
-
-                        // vt2.push(json.P2_muitoTranquilo);
-                        // vt2.push(json.P2_tranquilo);
-                        // vt2.push(json.P2_neutro);
-                        // vt2.push(json.P2_medo);
-                        // vt2.push(json.P2_muitoMedo);
-
-                        exibirGrafico()
-
-                        return json.resposta();
-                    })
+                    return resposta.json();
                 } else {
-                    console.log("Houve um erro ao tentar puxar ifoGrafico!");
-                    return resposta.text().then(function (texto) {
-                        throw new Error(texto);
-                    });
+                    console.log("Erro na requisição:", resposta.status);
+                    throw new Error(resposta.statusText);
                 }
             })
-            .then(function (json) {
-                console.log(json);
-                console.log(JSON.stringify(json));
+            .then(function (dados) {
+                console.log("Dados recebidos:", dados);
+
+
+                const limiteLabels = 10;
+                if (horaUmidade.length > limiteLabels) {
+
+                    horaUmidade.shift();
+                    umidadeReal.shift();
+                }
+
+                // Adiciona todos os novos dados aos arrays
+
+                var umidaAtual = dados.umidadeReal;
+                var horaAtual = dados.horaUmidade;
+
+                // horaAtual.slice(0, -3)
+                // Slice corta os dados nos index indicados
+
+                // alert(umidaAtual)
+                umidaAtual = umidaAtual - 40;
+                // alert(umidaAtual)
+                if (umidaAtual > 30) { 
+                    div_alarme.innerHTML = `${umidaAtual}%`;
+
+                    alarme.innerHTML = `Emergência`;
+                    alarme.style.backgroundColor = "#ff0000";
+                } else if (umidaAtual > 25) { 
+                    div_alarme.innerHTML = `${umidaAtual}%`;
+
+                    alarme.innerHTML = `Crítico`;
+                    alarme.style.backgroundColor = "#ffff00";
+                } else {
+                    div_alarme.innerHTML = `${umidaAtual}%`;
+
+                    alarme.innerHTML = `Ideal`;
+                    alarme.style.backgroundColor = "#10d82a";
+
+                }
+
+                umidadeReal.push(umidaAtual);
+                horaUmidade.push(horaAtual);
+
+                // Remove as labels mais antigas se excederem um limite (por exemplo, 10)
+
+
+                // Chama a função para atualizar o gráfico
+                atualizarGrafico();
             })
             .catch(function (erro) {
-                console.log(erro);
+                console.error("Erro durante a requisição:", erro);
             });
     }
+
+    function atualizarGrafico() {
+        // Atualiza os dados do gráfico existente
+        myChart.data.labels = horaUmidade;
+        myChart.data.datasets[0].data = umidadeReal;
+        myChart.update();
+    }
+</script>
+
+
+
+
+<!-- <script>
+
+    var umidadeReal = [];;
+    var horaUmidade = [];
+
+    window.onload = function () {
+        dadosGraficos();
+    };
+
+
+    function dadosGraficos() {
+        fetch("/grafico/dadosGraficos", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({})
+        })
+            .then(function (resposta) {
+                console.log("ESTOU NO THEN DO dadosGraficos()!");
+                if (resposta.ok) {
+
+                    umidadeReal.push(json.umidadeReal);
+                    horaUmidade.push(json.horaUmidade);
+                    
+                    alert(umidadeReal);
+
+                    return resposta.json();
+                } else {
+                    console.log("Erro na requisição:", resposta.status);
+                    throw new Error(resposta.statusText);
+                }
+            })
+            .then(function (dados) {
+                console.log("Dados recebidos:", dados);
+
+                // Faça o que precisar com os dados, como exibir no console
+            })
+            .catch(function (erro) {
+                console.error("Erro durante a requisição:", erro);
+            });
+    }
+
+
+    // function dadosGraficos() {
+    //     fetch("/grafico/dadosGraficos", {
+    //         method: "POST",
+    //         headers: {
+    //             "Content-Type": "application/json"
+    //         },
+    //         body: JSON.stringify({
+    //         })
+    //     })
+    //         .then(function (resposta) {
+    //             console.log("ESTOU NO THEN DO dadosGraficos()!");
+    //             if (resposta.ok) {
+    //                 resposta.json().then(json => {
+    //                     console.log("Dados recebidos:", json);
+
+    //                     // sessionStorage.P1_MUITO_TRANQUILO = json.P1_muitoTranquilo;
+    //                     // sessionStorage.P1_TRANQUILO = json.P1_tranquilo;
+    //                     // sessionStorage.P1_NEUTRO = json.P1_neutro;
+    //                     // sessionStorage.P1_MEDO = json.P1_medo;
+    //                     // sessionStorage.P1_MUITO_MEDO = json.P1_muitoMedo;
+
+    //                     umidadeReal.push(Number(json.umidade));
+    //                     horaUmidade.push(Number(json.dtHorario));
+    //                     // vt1.push(json.P1_neutro);
+    //                     // vt1.push(json.P1_medo);
+    //                     // vt1.push(json.P1_muitoMedo);
+
+    //                     // sessionStorage.P2_MUITO_TRANQUILO = json.P2_muitoTranquilo;
+    //                     // sessionStorage.P2_TRANQUILO = json.P2_tranquilo;
+    //                     // sessionStorage.P2_NEUTRO = json.P2_neutro;
+    //                     // sessionStorage.P2_MEDO = json.P2_medo;
+    //                     // sessionStorage.P2_MUITO_MEDO = json.P2_muitoMedo;
+
+    //                     // vt2.push(json.P2_muitoTranquilo);
+    //                     // vt2.push(json.P2_tranquilo);
+    //                     // vt2.push(json.P2_neutro);
+    //                     // vt2.push(json.P2_medo);
+    //                     // vt2.push(json.P2_muitoMedo);
+
+    //                     if (umidadeReal.length > 10) {
+    //                         dados.umidadeReal.shift();
+    //                         dados.horaUmidade.shift();
+    //                     }
+
+    //                     myChart.update()
+    //                     return json.resposta();
+    //                 })
+    //             } else {
+    //                 console.log("Houve um erro ao tentar puxar ifoGrafico!");
+    //                 return resposta.text().then(function (texto) {
+    //                     throw new Error(texto);
+    //                 });
+    //             }
+    //         })
+    //         .then(function (json) {
+    //             console.log(json);
+    //             console.log(JSON.stringify(json));
+    //         })
+    //         .catch(function (erro) {
+    //             console.log(erro);
+    //         });
+    // }
 
     const ctx = document.getElementById('myChart');
 
@@ -233,4 +398,4 @@
             }
         }
     });
-</script>
+</script> -->
