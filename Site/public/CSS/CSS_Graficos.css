@@ -78,6 +78,10 @@ body{
     padding: 10px 55px 10px 55px;
 }
 
+.menu-lateral ul li button.suporte {
+    padding: 10px 45px 10px 45px;
+}
+
 /* dashboard */
 
 .telaBranca{

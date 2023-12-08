@@ -45,7 +45,7 @@ body{
 
     width: 100%;
     padding-left: 80px;
-    padding-top: 250px;
+    padding-top: 230px;
 
     height: 30px;
     line-height: 60px;
@@ -76,6 +76,10 @@ body{
 
 .menu-lateral ul li button.sair {
     padding: 10px 55px 10px 55px;
+}
+
+.menu-lateral ul li button.suporte {
+    padding: 10px 45px 10px 45px;
 }
 
 select {
