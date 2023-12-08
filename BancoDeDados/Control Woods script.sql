@@ -1,4 +1,4 @@
-drop database controlWoods;
+-- drop database controlWoods;
 create database controlWoods;
 use controlWoods;
 
@@ -60,6 +60,20 @@ insert into registros values
 (null, 49.0, "2020-12-12 07:00:00", 1),
 (null, 51.0, "2020-12-12 08:00:00", 1),
 (null, 55.0, "2020-12-12 09:00:00", 1);
+insert into registros values
+(null, 90.0, "2023-12-12 10:00:00", 1);
+insert into registros values
+(null, 10.0, "2023-12-12 11:00:00", 1);
+insert into registros values
+(null, 20.0, "2023-12-12 12:00:00", 1);
+insert into registros values
+(null, 30.0, "2023-12-12 13:00:00", 1);]
+insert into registros values
+(null, 100.0, "2023-12-12 13:00:00", 1);
+
+select umidade as umidadeReal, DATE_FORMAT (dtHorario,'%H:%i:%s') as horaUmidade from registros
+                where fkSensor = 1
+                order by idRegistro desc limit 3;
 
 -- select * from empresa join galpao on idEmpresa=fkEmpresa join sensores on fkGalpao=idGalpao join registros on idRegistro = fkSensor;
 -- select registros.umidade, registros.dtHorario from registros join sensores on fkSensor = idSensor where fkGalpao = 1;
