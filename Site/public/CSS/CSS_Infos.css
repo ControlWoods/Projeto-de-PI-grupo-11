@@ -121,3 +121,11 @@ select {
     border-radius: 10px;
     background-color: #BA9E76;
 }
+.dadosUsuario{
+    display: flex;
+    justify-content: center;
+text-align: center;
+color: white;
+padding-left: 5px;
+margin-top: 3px;
+}
