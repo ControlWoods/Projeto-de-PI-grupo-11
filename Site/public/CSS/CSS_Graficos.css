@@ -110,25 +110,32 @@ body{
     padding: 20px 0 20px 0;
 }
 
-.inicioTela p {
-    margin-left: 400px;
-}
-
 .primeira-caixa, .segunda-caixa, .terceira-caixa, .caixa-historico {
     width: 1100px;
-    height: 700px;
+    height: auto;
     margin-top: 50px;
+    padding: 50px;
+    margin-bottom: 50px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
 
     background-color: #fff;
     border-radius: 60px;
 }
 
 .sensor {
-    margin: 60px 100px;
+    width: 70%;
 }
 
-.sensor p {
+.nome-sensor {
+    width: auto;
     margin-bottom: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .kpi {
@@ -138,6 +145,7 @@ body{
     justify-content: space-between;
 
     width: 100%;
+    margin-bottom: 50px;
 }
 
 .alarme {
@@ -157,11 +165,12 @@ body{
 }
 
 .dashboard {
-    height: 50%;
-    width: 81%;
+    height: auto;
+    width: 80%;
+    padding: 50px;
 
-    background-color: #1E0C06;
-    margin-left: 100px;
+    background-color: #1e0c062a;
+     
 }
 
 .terceira-caixa {
