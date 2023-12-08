@@ -1,3 +1,4 @@
+drop database controlWoods;
 create database controlWoods;
 use controlWoods;
 
@@ -35,27 +36,30 @@ constraint fkS foreign key (fkSensor) references sensores(idSensor),
 primary key(idRegistro, fkSensor)
 );
 
-select * from empresa;
-insert into empresa values 
-(null, 'teste', "teste", "oooii",1223333,070079797,80808808);
+-- select * from empresa;
+-- select * from galpao;
+-- select * from sensores;
+-- select * from registros;
 
-select * from galpao;
+insert into empresa values 
+(null, 'Contro Woods', "controlwoods@gmail.com", "Cw123456", 12345678912345, 1234567891, 11942290258);
 
 insert into galpao values 
-(null, 'galp1', 1);
-
-select * from sensores;
+(null, 'Galpão 1', 1);
 
 insert into sensores values
 (null, 1, 1);
 
-select * from registros;
-
-
 insert into registros values
-(null, 32.0, "2020-04-12 12:00:00", 1);
+(null, 48.0, "2023-12-12 01:00:00", 1),
+(null, 49.0, "2020-12-12 02:00:00", 1),
+(null, 49.0, "2020-12-12 03:00:00", 1),
+(null, 50.0, "2020-12-12 04:00:00", 1),
+(null, 50.0, "2020-12-12 05:00:00", 1),
+(null, 50.0, "2020-12-12 06:00:00", 1),
+(null, 49.0, "2020-12-12 07:00:00", 1),
+(null, 51.0, "2020-12-12 08:00:00", 1),
+(null, 55.0, "2020-12-12 09:00:00", 1);
 
-select * from empresa join galpao on idEmpresa=fkEmpresa
-join sensores on fkGalpao=idGalpao join registros on idRegistro = fkSensor;
-
-select registros.umidade, registros.dtHorario from registros join sensores on fkSensor = idSensor where fkGalpao = 1;
+-- select * from empresa join galpao on idEmpresa=fkEmpresa join sensores on fkGalpao=idGalpao join registros on idRegistro = fkSensor;
+-- select registros.umidade, registros.dtHorario from registros join sensores on fkSensor = idSensor where fkGalpao = 1;

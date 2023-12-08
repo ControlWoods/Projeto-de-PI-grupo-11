@@ -40,8 +40,7 @@
     <div class="telaBranca">
 
         <div class="inicioTela">
-            <p> Galpao 1 </p>
-            <span> ??/??/???? </span>
+            <p>Galpao 1</p>
         </div>
         <hr>
 
@@ -63,7 +62,7 @@
 
             <div class="dashboard">
                 <section>
-                    <canvas id="dht11Umidade"></canvas>
+                    <canvas id="myChart"></canvas>
                 </section>
             </div>
         </div>
@@ -146,5 +145,86 @@
 
 
 <script>
-    
+
+    var umidadeReal = [12, 19, 3, 5, 2, 3];;
+    var horaUmidade = ['02:30', '03:00', '03:30', '04:00', '04:30', '05:00'];
+
+    function dadosGraficos() {
+        fetch("/grafico/dadosGraficos", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+            })
+        })
+            .then(function (resposta) {
+                console.log("ESTOU NO THEN DO dadosGraficos()!");
+                if (resposta.ok) {
+                    resposta.json().then(json => {
+
+                        // sessionStorage.P1_MUITO_TRANQUILO = json.P1_muitoTranquilo;
+                        // sessionStorage.P1_TRANQUILO = json.P1_tranquilo;
+                        // sessionStorage.P1_NEUTRO = json.P1_neutro;
+                        // sessionStorage.P1_MEDO = json.P1_medo;
+                        // sessionStorage.P1_MUITO_MEDO = json.P1_muitoMedo;
+
+                        umidadeReal.push(json.umidade);
+                        horaUmidade.push(json.dtHorario);
+                        // vt1.push(json.P1_neutro);
+                        // vt1.push(json.P1_medo);
+                        // vt1.push(json.P1_muitoMedo);
+
+                        // sessionStorage.P2_MUITO_TRANQUILO = json.P2_muitoTranquilo;
+                        // sessionStorage.P2_TRANQUILO = json.P2_tranquilo;
+                        // sessionStorage.P2_NEUTRO = json.P2_neutro;
+                        // sessionStorage.P2_MEDO = json.P2_medo;
+                        // sessionStorage.P2_MUITO_MEDO = json.P2_muitoMedo;
+
+                        // vt2.push(json.P2_muitoTranquilo);
+                        // vt2.push(json.P2_tranquilo);
+                        // vt2.push(json.P2_neutro);
+                        // vt2.push(json.P2_medo);
+                        // vt2.push(json.P2_muitoMedo);
+
+                        exibirGrafico()
+
+                        return json.resposta();
+                    })
+                } else {
+                    console.log("Houve um erro ao tentar puxar ifoGrafico!");
+                    return resposta.text().then(function (texto) {
+                        throw new Error(texto);
+                    });
+                }
+            })
+            .then(function (json) {
+                console.log(json);
+                console.log(JSON.stringify(json));
+            })
+            .catch(function (erro) {
+                console.log(erro);
+            });
+    }
+
+    const ctx = document.getElementById('myChart');
+
+    new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: horaUmidade,
+            datasets: [{
+                label: 'Umidade',
+                data: umidadeReal,
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
 </script>
