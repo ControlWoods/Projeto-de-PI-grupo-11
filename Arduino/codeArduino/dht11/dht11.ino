@@ -77,6 +77,6 @@ int sensorValue=0;
 // Serial.println("0");
 // }
 
-delay(300000);
+delay(3000);
   }  
 //}
