@@ -7,7 +7,7 @@ function calcular() {
     
     // condição acaso campo 3 esteja nulo (será aplicado 18%)
     if (perdaPorcentagem == 0) {
-        perdaPorcentagem = 18 / 100;
+        perdaPorcentagem = 0.18;
     }
 
     // valor bruto em reais (sem a perda d tabuas)
