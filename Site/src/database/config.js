@@ -6,7 +6,7 @@ var mySqlConfig = {
     host: "localhost",
     database: "controlWoods",
     user: "root",
-    password: "123456789",
+    password: "28428510",
 };
 
 function executar(instrucao) {

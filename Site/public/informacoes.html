@@ -64,14 +64,14 @@
         <div class="informacoes">
 
             <div class="titulo">
-                <h1>Olá, [empresa]</h1>
+                <h1><span id="b_usuario"></span></h1>
             </div>
 
             <div class="infos">
                 <p class="subtitulo">CNPJ</p>
                 <span class="info"><div id="cnpj" class="dadosUsuario"></div></span>
                 <p class="subtitulo">Email</p>
-                <span class="info"><div id="email" class="dadosUsuario"></div></span>
+                <span class="info"><div id="email_usuario" class="dadosUsuario"></div></span>
                 <p class="subtitulo">Telefone Fixo</p>
                 <span class="info"><div id="telFixo" class="dadosUsuario"></div></span>
                 <p class="subtitulo">Telefone Celular</p>
@@ -88,10 +88,10 @@
 </html>
 <script>
     b_usuario.innerHTML= sessionStorage.NOME_USUARIO;
-    email.innerHTML= sessionStorage.EMAIL_USUARIO;
+    email_usuario.innerHTML= sessionStorage.EMAIL_USUARIO;
     telFixo.innerHTML=sessionStorage.TELFIXO_USUARIO;
     telCelular.innerHTML= sessionStorage.TELCELULAR_USUARIO;
-    cnpj.innerHTML=sessionStorage.CNPJ_USUARIO
+    cnpj.innerHTML=sessionStorage.CNPJ_USUARIO;
 
 
     function sair() {
@@ -113,5 +113,9 @@
     }
     function entrarInformacao(){
         window.location="informacoes.html"
+    }
+
+    function entrarGrafico(){
+        window.location="graficos1.html"
     }
 </script>

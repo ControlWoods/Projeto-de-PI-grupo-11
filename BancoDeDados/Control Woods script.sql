@@ -36,7 +36,7 @@ constraint fkS foreign key (fkSensor) references sensores(idSensor),
 primary key(idRegistro, fkSensor)
 );
 
--- select * from empresa;
+select * from empresa;
 -- select * from galpao;
 -- select * from sensores;
 -- select * from registros;
@@ -67,7 +67,7 @@ insert into registros values
 insert into registros values
 (null, 20.0, "2023-12-12 12:00:00", 1);
 insert into registros values
-(null, 30.0, "2023-12-12 13:00:00", 1);]
+(null, 30.0, "2023-12-12 13:00:00", 1);
 insert into registros values
 (null, 100.0, "2023-12-12 13:00:00", 1);
 
@@ -77,3 +77,14 @@ select umidade as umidadeReal, DATE_FORMAT (dtHorario,'%H:%i:%s') as horaUmidade
 
 -- select * from empresa join galpao on idEmpresa=fkEmpresa join sensores on fkGalpao=idGalpao join registros on idRegistro = fkSensor;
 -- select registros.umidade, registros.dtHorario from registros join sensores on fkSensor = idSensor where fkGalpao = 1;
+
+ create user 'root'@'10.18.32.241' identified by '28428510';
+ 
+ grant insert on registros to 'root'@'10.18.32.241';
+ 
+ flush privileges;
+ 
+ select * from registros;
+ 
+ truncate registros;
+ 

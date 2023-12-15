@@ -114,12 +114,18 @@ select {
 }
 
 .info {
-    width: 200px;
+    width: 250px;
     height: 30px;
+    padding: 5px;
+    text-align: center;
 
     border: none;
     border-radius: 10px;
     background-color: #BA9E76;
+}
+
+.info div {
+    color: white;
 }
 
 /* suporte */
@@ -135,7 +141,7 @@ select {
 
     background-color: rgb(211,211,211, 0.2);
 
-    display: flex;
+    display: none;
     align-items: center;
     justify-content: center;
     position: fixed;

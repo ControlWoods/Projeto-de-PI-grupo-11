@@ -14,12 +14,12 @@
 
     <div class="menu-lateral">
         <div class="logo">
-            <img src="../assets/Logo/logoWhitesmoke.png">
+            <img src="../assets/Logo/logo white icon 100 x 100.png">
         </div>
 
         <ul>
             <li class="lista">
-                <button class="informacao"> Informações </button>
+                <button class="informacao" onclick="entrarInformacao()"> Informações </button>
             </li>
             <li class="lista">
                 <select id="galpoes" class="galpoes">
@@ -32,7 +32,7 @@
                 <button class="suporte"> Suporte </button>
             </li>
             <li class="lista">
-                <button class="sair"> Sair </button>
+                <button class="sair" onclick="sair()"> Sair </button>
             </li>
         </ul>
     </div>
@@ -113,7 +113,6 @@
             </div>
         </div> -->
 
-        <hr>
 
         <!-- <div class="caixa-historico">
             <div class="historico">
@@ -155,6 +154,14 @@
     var umidadeReal = [];
     var horaUmidade = [];
     var myChart;
+
+    function entrarInformacao(){
+        window.location="../informacoes.html"
+    }
+
+    function sair(){
+        window.location="../projeto.html"
+    }
 
     window.onload = function () {
         // Inicializa o gráfico
